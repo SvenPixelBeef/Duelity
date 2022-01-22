@@ -92,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7767921950746149210}
   - component: {fileID: 7767921950746149157}
+  - component: {fileID: 451436443937483757}
   m_Layer: 0
   m_Name: DuelMiniGameDisplay
   m_TagString: Untagged
@@ -165,6 +166,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &451436443937483757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7767921950746149211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17d68da65e19a94980b5e362cdecbe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainSpriteRenderer: {fileID: 7767921950746149157}
+  _indicator: {fileID: 7767921950491864511}
 --- !u!1 &7767921951099571358
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +192,6 @@ GameObject:
   - component: {fileID: 7767921951099571354}
   - component: {fileID: 7767921951099571355}
   - component: {fileID: 7767921951099571352}
-  - component: {fileID: 7767921951099571557}
   m_Layer: 0
   m_Name: LeftPlayer
   m_TagString: Untagged
@@ -283,20 +297,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerType: 0
-  _duelMiniGameDisplay: {fileID: 7767921951099571557}
+  _duelMiniGameDisplay: {fileID: 451436443937483757}
   _animator: {fileID: 7767921951099571354}
   _spriteRenderer: {fileID: 7767921951099571355}
---- !u!114 &7767921951099571557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7767921951099571358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c17d68da65e19a94980b5e362cdecbe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainSpriteRenderer: {fileID: 7767921950746149157}
-  _indicator: {fileID: 7767921950491864511}

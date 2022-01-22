@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _keyCodeLeftPlayer: 32
   _keyCodeRightPlayer: 13
+  _dualStartTimeRange:
+    _min: 1
+    _max: 1
+  _dualTimeScale: 0.1
   _duelMiniGameConfig: {fileID: 11400000, guid: a07aaedfb4bb0f343b4c8176c5fe6cbb, type: 2}

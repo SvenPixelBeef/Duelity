@@ -21,5 +21,13 @@
         public static Event<NoEventArgs> DuelStarted { get; }
             = new Event<NoEventArgs>();
 
+        public static Event<Player> PlayerFailedReload { get; }
+            = new Event<Player>();
+
+        public static Event<Player> PlayerReloadedAll { get; }
+            = new Event<Player>();
+
+
+
     }
 }

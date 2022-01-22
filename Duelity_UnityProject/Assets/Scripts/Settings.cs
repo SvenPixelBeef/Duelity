@@ -14,7 +14,14 @@ namespace Duelity
         [SerializeField] KeyCode _keyCodeRightPlayer;
         public KeyCode KeyCodeRightPlayer => _keyCodeRightPlayer;
 
-        [SerializeField, Expandable] DuelMiniGameConfig _duelMiniGameConfig;
+        [SerializeField, Space] FloatRange _dualStartTimeRange;
+        public FloatRange DualStartTimeRange => _dualStartTimeRange;
+
+
+        [SerializeField, Range(0f, 1f), Space] float _dualTimeScale = 0.1f;
+        public float DualTimeScale => _dualTimeScale;
+
+        [SerializeField, Space, Expandable] DuelMiniGameConfig _duelMiniGameConfig;
         public DuelMiniGameConfig DuelMiniGameConfig => _duelMiniGameConfig;
 
     }

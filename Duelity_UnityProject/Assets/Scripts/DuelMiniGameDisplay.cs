@@ -36,10 +36,11 @@ namespace Duelity
                 float maxAngle = Mathf.Lerp(0f, 360f, range.Max);
 
                 float radius = .5f;
-                Vector2 center = _mainSpriteRenderer.transform.position;
+                Vector2 center = transform.position;
                 Vector2 pos1 = MathHelper.GetPointOnCircle(center, radius, minAngle * Mathf.Deg2Rad);
                 Vector2 pos2 = MathHelper.GetPointOnCircle(center, radius, maxAngle * Mathf.Deg2Rad);
 
+                Gizmos.color = Color.green;
                 Gizmos.DrawLine(center, pos1);
                 Gizmos.DrawLine(center, pos2);
                 Gizmos.DrawLine(pos1, pos2);
