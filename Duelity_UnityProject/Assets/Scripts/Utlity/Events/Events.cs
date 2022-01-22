@@ -17,5 +17,9 @@
         public readonly struct NoEventArgs { }
         public static NoEventArgs NoArgs { get; } = new NoEventArgs();
 
+
+        public static Event<NoEventArgs> DuelStarted { get; }
+            = new Event<NoEventArgs>();
+
     }
 }
