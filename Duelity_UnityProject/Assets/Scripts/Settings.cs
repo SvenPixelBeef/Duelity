@@ -24,5 +24,11 @@ namespace Duelity
         [SerializeField, Space, Expandable] DuelMiniGameConfig _duelMiniGameConfig;
         public DuelMiniGameConfig DuelMiniGameConfig => _duelMiniGameConfig;
 
+
+        [SerializeField, Space] float _fadeInDuration = 0.5f;
+        public float FadeInDuration => _fadeInDuration;
+
+        [SerializeField, Space] float _fadeOutDuration = 0.5f;
+        public float FadeOutDuration => _fadeOutDuration;
     }
 }

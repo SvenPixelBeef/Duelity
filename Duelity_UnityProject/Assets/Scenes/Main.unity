@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &36478089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7767921951099571352, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
+  m_PrefabInstance: {fileID: 7767921951403954277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f134bea38443e5641a01a2fc94915ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &139862261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -267,6 +278,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &529501296 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6678115430184379808, guid: 7412380a8ff986c49a1f103b5b3be4c8, type: 3}
+  m_PrefabInstance: {fileID: 139862261}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f134bea38443e5641a01a2fc94915ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &626208884
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,8 +565,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settings: {fileID: 11400000, guid: bec92ba837bc5e743a86c504dce159ca, type: 2}
+  _leftPlayer: {fileID: 36478089}
+  _rightPlayer: {fileID: 529501296}
   _fadeOutImage: {fileID: 626208886}
-  _anyKeyWasDown: 1
 --- !u!1001 &7767921951403954277
 PrefabInstance:
   m_ObjectHideFlags: 0

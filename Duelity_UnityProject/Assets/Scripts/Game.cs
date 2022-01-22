@@ -1,11 +1,11 @@
 using Duelity.Utility;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 
 namespace Duelity
 {
@@ -13,15 +13,17 @@ namespace Duelity
     {
         [SerializeField, Expandable] Settings _settings;
 
+        [SerializeField] Player _leftPlayer;
+
+        [SerializeField] Player _rightPlayer;
+
         [SerializeField] Image _fadeOutImage;
 
-        Coroutine _crossFadeRoutine;
+        Coroutine _crossFadeCoroutine;
 
-        [SerializeField] bool _anyKeyWasDown;
+        Coroutine _endingCoroutine;
 
-        float _duelTriggerTime;
-        float _duelTriggerTimer;
-        bool _duelTriggered;
+        bool _anyEndingWasTriggered;
 
         public static Game Instance { get; private set; }
 
@@ -31,53 +33,89 @@ namespace Duelity
         void Awake()
         {
             Instance = this;
-            _duelTriggerTime = Settings.DualStartTimeRange.GetRandomValueInsideRange();
+            this.ListenTo(Events.PlayerReloadedAll, OnPlayerReloadedAll);
+            this.ListenTo(Events.PlayerFailedReload, OnPlayerFailedReload);
         }
 
-        void Start()
+        IEnumerator Start()
         {
             Time.timeScale = 1f;
             _fadeOutImage.color = Color.black;
-            _fadeOutImage.CrossFadeAlpha(0f, 1f, true);
+            _fadeOutImage.CrossFadeAlpha(0f, Settings.FadeInDuration, true);
+            yield return new WaitForSecondsRealtime(Settings.FadeInDuration);
+
+            // TODO: Show any key prompt
+
+            yield return new WaitUntil(() => Input.anyKeyDown || Application.isEditor);
+            // TODO: Hide any key prompt and maybe other stuff from title scene
+
+
+            float duelTriggerTime = Settings.DualStartTimeRange.GetRandomValueInsideRange();
+            yield return new WaitForSecondsRealtime(duelTriggerTime);
+
+            Time.timeScale = 0.1f;
+            Events.DuelStarted.RaiseEvent(Events.NoArgs);
+
+            yield return new WaitForSecondsRealtime(30f);
+            if (!_anyEndingWasTriggered)
+            {
+                _anyEndingWasTriggered = true;
+                _endingCoroutine = StartCoroutine(SecretEndingRoutine());
+                IEnumerator SecretEndingRoutine()
+                {
+                    // TODO: do special easter egg ending here: both walk away
+                    yield return null;
+
+                }
+            }
+        }
+
+        void OnDestroy()
+        {
+            this.StopListeningTo(Events.PlayerReloadedAll);
+            this.StopListeningTo(Events.PlayerFailedReload);
         }
 
         void Update()
         {
             DebugReloadScene();
-
-            if (!_anyKeyWasDown)
-            {
-                _anyKeyWasDown = Input.anyKeyDown;
-                if (!_anyKeyWasDown)
-                    return;
-            }
-
-            if (_duelTriggered)
-                return;
-
-            _duelTriggerTimer += Time.deltaTime;
-            if (_duelTriggerTimer >= _duelTriggerTime)
-            {
-                Time.timeScale = 0.1f;
-                Events.DuelStarted.RaiseEvent(Events.NoArgs);
-                _duelTriggered = true;
-            }
         }
 
-        public void Reload()
+
+        void OnPlayerFailedReload(Player playerWhoFailed)
         {
-            CrossFade(1, 1f, () => SceneManager.LoadScene("Main"));
+            Debug.Assert(_endingCoroutine == null);
+            _endingCoroutine = StartCoroutine(PlayerFailedEndingRoutine());
+            IEnumerator PlayerFailedEndingRoutine()
+            {
+                _anyEndingWasTriggered = true;
+
+                yield return null;
+            }
         }
+
+        void OnPlayerReloadedAll(Player winningPlayer)
+        {
+            Debug.Assert(_endingCoroutine == null);
+            _endingCoroutine = StartCoroutine(PlayerSuccededEndingRoutine());
+            IEnumerator PlayerSuccededEndingRoutine()
+            {
+                _anyEndingWasTriggered = true;
+
+                yield return null;
+            }
+        }
+
 
         void CrossFade(float alpha, float duration, Action callback = null)
         {
-            if (_crossFadeRoutine != null)
+            if (_crossFadeCoroutine != null)
             {
-                StopCoroutine(_crossFadeRoutine);
-                _crossFadeRoutine = null;
+                StopCoroutine(_crossFadeCoroutine);
+                _crossFadeCoroutine = null;
             }
 
-            _crossFadeRoutine = StartCoroutine(CrossFadeRoutine());
+            _crossFadeCoroutine = StartCoroutine(CrossFadeRoutine());
             IEnumerator CrossFadeRoutine()
             {
                 _fadeOutImage.CrossFadeAlpha(alpha, duration, true);
@@ -86,6 +124,10 @@ namespace Duelity
             }
         }
 
+        public void Reload()
+        {
+            CrossFade(1, Settings.FadeOutDuration, () => SceneManager.LoadScene("Main"));
+        }
 
         [Conditional(Log.EDITOR_DEFINE)]
         [Conditional(Log.DEVBUILD_DEFINE)]
