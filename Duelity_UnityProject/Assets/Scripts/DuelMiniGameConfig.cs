@@ -32,5 +32,9 @@ namespace Duelity
 
         [SerializeField] float _minSpeed;
         public float MinSpeed => _minSpeed;
+
+
+        [SerializeField, Space] FloatRange _directionChangeChance;
+        public FloatRange DirectionChangeChance => _directionChangeChance;
     }
 }

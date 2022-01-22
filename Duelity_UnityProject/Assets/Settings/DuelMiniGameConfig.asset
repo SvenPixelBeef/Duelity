@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DuelMiniGameConfig
   m_EditorClassIdentifier: 
   _startingSpeedRange:
-    _min: 0.5
-    _max: 0.5
+    _min: 2
+    _max: 2.5
   _startingDirection: 1
   _randomizeStartingDirection: 1
   _slowDownOverTime:
@@ -43,3 +43,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   _slowDownDuration: 10
   _minSpeed: 0.5
+  _directionChangeChance:
+    _min: 0.33
+    _max: 0.33

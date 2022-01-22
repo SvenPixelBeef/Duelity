@@ -39,15 +39,21 @@ namespace Duelity
 
         void Update()
         {
-            _duelMiniGame.Update(Time.deltaTime);
+            _duelMiniGame.Update(Time.unscaledDeltaTime);
             if (Input.GetKeyDown(ActionKey))
             {
                 Log.Info($"{_playerType} pressed ActionKey {ActionKey}");
-                var hit = _duelMiniGame.IsInsideValidRange(out FloatRange hitRange);
+                bool hit = _duelMiniGame.IsInsideValidRange(out FloatRange hitRange);
                 if (hit)
                 {
                     _duelMiniGame.RemoveRange(hitRange);
-                    // Check for all ranges hit etc.
+                    // more feedback stuff here
+
+                }
+                else
+                {
+                    // Game over?
+
                 }
             }
         }

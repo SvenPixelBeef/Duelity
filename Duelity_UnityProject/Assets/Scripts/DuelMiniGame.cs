@@ -68,7 +68,17 @@ namespace Duelity
 
         public bool RemoveRange(FloatRange floatRange)
         {
-            return _validFloatRanges.Remove(floatRange);
+            var removed = _validFloatRanges.Remove(floatRange);
+            if (removed)
+            {
+                float chance = Config.DirectionChangeChance.GetRandomValueInsideRange();
+                if (UnityEngine.Random.value <= chance)
+                {
+                    FlipDirection();
+                }
+            }
+
+            return removed;
         }
 
         public void Update(float deltaTime)
