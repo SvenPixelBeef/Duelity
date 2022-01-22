@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Duelity
@@ -28,7 +26,13 @@ namespace Duelity
         [SerializeField, Space] float _fadeInDuration = 0.5f;
         public float FadeInDuration => _fadeInDuration;
 
-        [SerializeField, Space] float _fadeOutDuration = 0.5f;
+        [SerializeField] float _fadeOutDuration = 0.5f;
         public float FadeOutDuration => _fadeOutDuration;
+
+        [SerializeField, Space] float _requiredDurationSecretEnding = 30f;
+        public float RequiredDurationSecretEnding => _requiredDurationSecretEnding;
+
+        [SerializeField, Space] float _walkAwaySpeed = 3f;
+        public float WalkAwaySpeed => _walkAwaySpeed;
     }
 }

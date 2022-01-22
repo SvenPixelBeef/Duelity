@@ -13,6 +13,10 @@ namespace Duelity
     {
         [SerializeField, Expandable] Settings _settings;
 
+
+
+        [Header("Scene References")]
+
         [SerializeField] Player _leftPlayer;
 
         [SerializeField] Player _rightPlayer;
@@ -53,19 +57,31 @@ namespace Duelity
             float duelTriggerTime = Settings.DualStartTimeRange.GetRandomValueInsideRange();
             yield return new WaitForSecondsRealtime(duelTriggerTime);
 
-            Time.timeScale = 0.1f;
             Events.DuelStarted.RaiseEvent(Events.NoArgs);
+            Time.timeScale = 0.1f;
 
-            yield return new WaitForSecondsRealtime(30f);
+            yield return new WaitForSecondsRealtime(Settings.RequiredDurationSecretEnding);
             if (!_anyEndingWasTriggered)
             {
+                Events.SecretEndingTriggered.RaiseEvent(Events.NoArgs);
                 _anyEndingWasTriggered = true;
                 _endingCoroutine = StartCoroutine(SecretEndingRoutine());
                 IEnumerator SecretEndingRoutine()
                 {
-                    // TODO: do special easter egg ending here: both walk away
-                    yield return null;
+                    Player firstToStandDown = UnityEngine.Random.value >= .5f ? _leftPlayer : _rightPlayer;
+                    Player secondToStandDown = firstToStandDown == _leftPlayer ? _rightPlayer : _leftPlayer;
+                    firstToStandDown.StandDown();
+                    yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(0.33f, 1f));
+                    secondToStandDown.StandDown();
 
+                    yield return new WaitForSecondsRealtime(1f);
+
+                    Player firstToWalkaway = UnityEngine.Random.value >= .5f ? _leftPlayer : _rightPlayer;
+                    Player secondToWalkaway = firstToWalkaway == _leftPlayer ? _rightPlayer : _leftPlayer;
+
+                    firstToWalkaway.WalkAway();
+                    yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(0.33f, 1f));
+                    secondToWalkaway.WalkAway();
                 }
             }
         }
@@ -101,8 +117,15 @@ namespace Duelity
             IEnumerator PlayerSuccededEndingRoutine()
             {
                 _anyEndingWasTriggered = true;
-
+                Time.timeScale = 1f;
+                winningPlayer.Shoot();
                 yield return null;
+                Player losingPlayer = _leftPlayer == winningPlayer ? _rightPlayer : _leftPlayer;
+                losingPlayer.Die();
+
+                yield return new WaitForSecondsRealtime(2f);
+
+                winningPlayer.WalkAway();
             }
         }
 

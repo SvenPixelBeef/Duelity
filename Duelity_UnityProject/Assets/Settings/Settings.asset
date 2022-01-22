@@ -21,3 +21,5 @@ MonoBehaviour:
   _duelMiniGameConfig: {fileID: 11400000, guid: a07aaedfb4bb0f343b4c8176c5fe6cbb, type: 2}
   _fadeInDuration: 0
   _fadeOutDuration: 0
+  _requiredDurationSecretEnding: 30
+  _walkAwaySpeed: 2

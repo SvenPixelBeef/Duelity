@@ -21,6 +21,9 @@
         public static Event<NoEventArgs> DuelStarted { get; }
             = new Event<NoEventArgs>();
 
+        public static Event<NoEventArgs> SecretEndingTriggered { get; }
+            = new Event<NoEventArgs>();
+
         public static Event<Player> PlayerFailedReload { get; }
             = new Event<Player>();
 

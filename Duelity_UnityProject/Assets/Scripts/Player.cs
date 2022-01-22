@@ -1,4 +1,6 @@
 ﻿using Duelity.Utility;
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Duelity
@@ -15,18 +17,29 @@ namespace Duelity
 
         [SerializeField] SpriteRenderer _spriteRenderer;
 
+        [SerializeField] ParticleSystem _shootingParticleSystem;
+
         DuelMiniGame _duelMiniGame;
 
         KeyCode ActionKey => _playerType == PlayerType.LeftPlayer
             ? Game.Settings.KeyCodeLeftPlayer
             : Game.Settings.KeyCodeRightPlayer;
 
+        static readonly int parameterId = Animator.StringToHash("State");
+
+        const int ANIM_IDLE = 0;
+        const int ANIM_DRAW_WEAPON = 1;
+        const int ANIM_SHOOT = 2;
+        const int ANIM_DIE = 3;
+        const int ANIM_WALK = 4;
+        const int ANIM_PUT_WEAPON_AWAY = 5;
 
         void Awake()
         {
             this.ListenTo(Events.DuelStarted, OnDuelStarted);
             this.ListenTo(Events.PlayerReloadedAll, OnPlayerReloadedAll);
             this.ListenTo(Events.PlayerFailedReload, OnPlayerFailedReload);
+            this.ListenTo(Events.SecretEndingTriggered, OnPlayerFailedReload);
         }
 
         void OnDestroy()
@@ -34,6 +47,7 @@ namespace Duelity
             this.StopListeningTo(Events.DuelStarted);
             this.StopListeningTo(Events.PlayerReloadedAll);
             this.StopListeningTo(Events.PlayerFailedReload);
+            this.StopListeningTo(Events.SecretEndingTriggered);
         }
 
         void Update()
@@ -67,6 +81,7 @@ namespace Duelity
         {
             _duelMiniGame = new DuelMiniGame(Game.Settings.DuelMiniGameConfig);
             _duelMiniGameDisplay.AssignDuelMiniGame(_duelMiniGame);
+            _animator.SetInteger(parameterId, ANIM_DRAW_WEAPON);
         }
 
         void OnPlayerReloadedAll(Player player)
@@ -86,6 +101,52 @@ namespace Duelity
             if (player == this)
             {
                 Log.Info($"{_playerType} failed to reload!");
+            }
+        }
+
+        void OnPlayerFailedReload(Events.NoEventArgs _)
+        {
+            _duelMiniGame = null;
+            _duelMiniGameDisplay.gameObject.SetActive(false);
+        }
+
+        public void Shoot()
+        {
+            _animator.SetInteger(parameterId, ANIM_SHOOT);
+            _shootingParticleSystem.Play();
+            // TODO: Sound effect for shooting goes here
+
+        }
+
+        public void Die()
+        {
+            _animator.SetInteger(parameterId, ANIM_DIE);
+
+            // TODO:Sound effect for dying goes here
+
+        }
+
+        public void StandDown()
+        {
+            _animator.SetInteger(parameterId, ANIM_PUT_WEAPON_AWAY);
+        }
+
+        public void WalkAway()
+        {
+            _spriteRenderer.flipX = true;
+            _animator.SetInteger(parameterId, ANIM_WALK);
+            StartCoroutine(WalkAwayRoutine());
+            IEnumerator WalkAwayRoutine()
+            {
+                Vector2 dir = _playerType == PlayerType.LeftPlayer ? Vector2.left : Vector2.right;
+                float duration = 10f;
+                float elapsedTime = 0f;
+                while (elapsedTime < duration)
+                {
+                    transform.Translate(dir * Game.Settings.WalkAwaySpeed * Time.unscaledDeltaTime);
+                    elapsedTime += Time.unscaledDeltaTime;
+                    yield return null;
+                }
             }
         }
     }
