@@ -23,16 +23,25 @@ namespace Duelity
 
         [SerializeField] Image _fadeOutImage;
 
+
         Coroutine _crossFadeCoroutine;
 
         Coroutine _endingCoroutine;
 
         bool _anyEndingWasTriggered;
 
+        static AudioManager _audio;
+
         public static Game Instance { get; private set; }
 
         public static Settings Settings => Instance._settings;
+        public static AudioManager Audio => _audio ??= new AudioManager(10);
 
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void Init()
+        {
+            _audio = null;
+        }
 
         void Awake()
         {
@@ -43,6 +52,7 @@ namespace Duelity
 
         IEnumerator Start()
         {
+            Settings.TitleScreenMusic.Play(target: this);
             Time.timeScale = 1f;
             _fadeOutImage.color = Color.black;
             _fadeOutImage.CrossFadeAlpha(0f, Settings.FadeInDuration, true);
@@ -50,15 +60,24 @@ namespace Duelity
 
             // TODO: Show any key prompt
 
-            yield return new WaitUntil(() => Input.anyKeyDown || Application.isEditor);
-            // TODO: Hide any key prompt and maybe other stuff from title scene
+            yield return new WaitUntil(() => Input.anyKeyDown);//|| Application.isEditor
+                                                               // TODO: Hide any key prompt and maybe other stuff from title scene
+
+            float musicFadeDuration = 1.5f;
+            Settings.AmbienceMusic.Play(this, 0f, 1f);
+            Settings.AmbienceMusic.Fade(this, Settings.AmbienceMusic.Volume, musicFadeDuration, true);
+            Settings.TitleScreenMusic.Fade(this, 0f, musicFadeDuration, true);
+            // yield return new WaitForSecondsRealtime(musicFadeDuration);
 
 
             float duelTriggerTime = Settings.DualStartTimeRange.GetRandomValueInsideRange();
             yield return new WaitForSecondsRealtime(duelTriggerTime);
 
             Events.DuelStarted.RaiseEvent(Events.NoArgs);
-            Time.timeScale = 0.1f;
+         //   Time.timeScale = 0.1f;
+
+            // TODO: Play more/other sounds/music here?
+
 
             yield return new WaitForSecondsRealtime(Settings.RequiredDurationSecretEnding);
             if (!_anyEndingWasTriggered)
@@ -149,6 +168,8 @@ namespace Duelity
 
         public void Reload()
         {
+            Settings.TitleScreenMusic.Fade(this, 0f, Settings.FadeOutDuration, true);
+            Settings.AmbienceMusic.Fade(this, 0f, Settings.FadeOutDuration, true);
             CrossFade(1, Settings.FadeOutDuration, () => SceneManager.LoadScene("Main"));
         }
 

@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Collections.Generic;
 
-namespace PixelBeef.Utility
+namespace Duelity.Utility
 {
     public class DirectoryHelper
     {

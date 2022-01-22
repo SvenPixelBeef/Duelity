@@ -63,10 +63,14 @@ namespace Duelity
                 if (hit)
                 {
                     _duelMiniGame.RemoveRange(hitRange);
-                    // more feedback stuff here
+
                     if (_duelMiniGame.ValidFloatRanges.Count == 0)
                     {
                         Events.PlayerReloadedAll.RaiseEvent(this);
+                    }
+                    else
+                    {
+                        Game.Settings.ReloadSounds.RandomElement().Play();
                     }
                 }
                 else
@@ -114,8 +118,7 @@ namespace Duelity
         {
             _animator.SetInteger(parameterId, ANIM_SHOOT);
             _shootingParticleSystem.Play();
-            // TODO: Sound effect for shooting goes here
-
+            Game.Settings.GunShotSound.Play();
         }
 
         public void Die()

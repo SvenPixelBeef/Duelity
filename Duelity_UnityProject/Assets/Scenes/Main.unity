@@ -151,7 +151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6678115430184379809, guid: 7412380a8ff986c49a1f103b5b3be4c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.161
       objectReference: {fileID: 0}
     - target: {fileID: 6678115430184379809, guid: 7412380a8ff986c49a1f103b5b3be4c8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -185,6 +185,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6678115430184379811, guid: 7412380a8ff986c49a1f103b5b3be4c8, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678115430184379811, guid: 7412380a8ff986c49a1f103b5b3be4c8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4723107735738678597, guid: 8783b29a36e02e443936640750b4a879, type: 3}
     - target: {fileID: 6678115430184379814, guid: 7412380a8ff986c49a1f103b5b3be4c8, type: 3}
       propertyPath: m_Name
       value: RightPlayer
@@ -581,7 +589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7767921951099571353, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.161
       objectReference: {fileID: 0}
     - target: {fileID: 7767921951099571353, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
       propertyPath: m_LocalPosition.z

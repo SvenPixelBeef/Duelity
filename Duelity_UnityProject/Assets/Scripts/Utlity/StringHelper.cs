@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace PixelBeef.Utility
+namespace Duelity.Utility
 {
     public static class StringHelper
     {

@@ -15,11 +15,18 @@ MonoBehaviour:
   _keyCodeLeftPlayer: 32
   _keyCodeRightPlayer: 13
   _dualStartTimeRange:
-    _min: 0
+    _min: 5
     _max: 0
   _dualTimeScale: 0.1
   _duelMiniGameConfig: {fileID: 11400000, guid: a07aaedfb4bb0f343b4c8176c5fe6cbb, type: 2}
-  _fadeInDuration: 0
-  _fadeOutDuration: 0
+  _fadeInDuration: 1
+  _fadeOutDuration: 1
   _requiredDurationSecretEnding: 30
   _walkAwaySpeed: 2
+  _gunShotSound: {fileID: 11400000, guid: 7a9ef66fc85258444807a2d059cf5cf3, type: 2}
+  _reloadSounds:
+  - {fileID: 11400000, guid: 897364fdb02c3df4295c7347c2b373bc, type: 2}
+  - {fileID: 11400000, guid: 65c40ead825bb9f41bf6330d7ea9c77d, type: 2}
+  - {fileID: 11400000, guid: c0ed1a210e6b4034a89351f38df02605, type: 2}
+  _titleScreenMusic: {fileID: 11400000, guid: a7cbe47a1b35c584f97a4e960d6f3aa3, type: 2}
+  _ambienceMusic: {fileID: 11400000, guid: d565131ad37498146ae2f31d9cac6f53, type: 2}

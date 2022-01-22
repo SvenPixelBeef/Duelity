@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Duelity
@@ -34,5 +35,23 @@ namespace Duelity
 
         [SerializeField, Space] float _walkAwaySpeed = 3f;
         public float WalkAwaySpeed => _walkAwaySpeed;
+
+        [Header("Sounds")]
+        [Space]
+
+        [SerializeField, Expandable] Sound _gunShotSound;
+        public Sound GunShotSound => _gunShotSound;
+
+        [SerializeField, Expandable] List<Sound> _reloadSounds;
+        public IReadOnlyCollection<Sound> ReloadSounds => _reloadSounds;
+
+        [Header("Music")]
+        [Space]
+
+        [SerializeField, Expandable] Sound _titleScreenMusic;
+        public Sound TitleScreenMusic => _titleScreenMusic;
+
+        [SerializeField, Expandable] Sound _ambienceMusic;
+        public Sound AmbienceMusic => _ambienceMusic;
     }
 }
