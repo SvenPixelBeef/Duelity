@@ -99,10 +99,15 @@ namespace Duelity
             _indicator.rotation = Quaternion.Euler(0, 0, value - 90f);
         }
 
-        public void UpdateSingleSlot(int index)
+        public void UpdateSingleSlot(int index, bool success = true)
         {
             SpriteRenderer toUpdate = _spriteRenderers[index];
-            Game.Instance.FadeInSpriteRenderer(toUpdate, .66f, AnimationCurve.EaseInOut(0f, 0f, 1f, 1f));
+            if (!success)
+            {
+                toUpdate.color = Game.Settings.FailColor;
+            }
+
+            Game.Instance.FadeInSpriteRenderer(toUpdate, success ? .66f : .33f, AnimationCurve.EaseInOut(0f, 0f, 1f, 1f));
         }
 
         public void UpdateReloadSlots()

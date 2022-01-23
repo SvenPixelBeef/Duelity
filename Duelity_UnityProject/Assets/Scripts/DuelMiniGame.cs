@@ -74,6 +74,12 @@ namespace Duelity
             return removed;
         }
 
+        public int GetIndexForValue(float value)
+        {
+            var floatRange = _floatRanges.First(r => r.ValueIsInsideRange(value));
+            return _floatRanges.IndexOf(floatRange);
+        }
+
         public void Update(float deltaTime)
         {
             Value += (Speed * deltaTime * SignOfDirection);

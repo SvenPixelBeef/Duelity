@@ -34,6 +34,10 @@ namespace Duelity
         [SerializeField, Space] float _birdReactionDelay = .33f;
         public float BirdReactionDelay => _birdReactionDelay;
 
+
+        [SerializeField, Space] Color _failColor;
+        public Color FailColor => _failColor;
+
         [Header("Fading in and out")]
         [Space]
 
@@ -74,5 +78,17 @@ namespace Duelity
 
         [SerializeField, Expandable] Sound _ambienceMusic2;
         public Sound AmbienceMusic2 => _ambienceMusic2;
+
+
+        [Header("Screen shake")]
+
+        [SerializeField, Expandable] CameraShake _cameraShakeShot;
+        public CameraShake CameraShakeShot => _cameraShakeShot;
+
+        [SerializeField, Expandable] CameraShake _cameraShakeReloadSuccess;
+        public CameraShake CameraShakeReloadSuccess => _cameraShakeReloadSuccess;
+
+        [SerializeField, Expandable] CameraShake _cameraShakeReloadFail;
+        public CameraShake CameraShakeReloadFail => _cameraShakeReloadFail;
     }
 }

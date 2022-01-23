@@ -28,6 +28,8 @@ namespace Duelity
 
         [SerializeField] ParticleSystem _birdsPS;
 
+        [SerializeField] CameraShaker _cameraShaker;
+
 
         Color FadeOutColor => Color.black;
         Color FadeInColor => new Color(0f, 0f, 0f, 0f);
@@ -42,6 +44,7 @@ namespace Duelity
 
         public static Game Instance { get; private set; }
 
+        public static CameraShaker CameraShaker => Instance._cameraShaker;
         public static Settings Settings => Instance._settings;
         public static AudioManager Audio => _audio ??= new AudioManager(10);
 
@@ -148,7 +151,7 @@ namespace Duelity
 
         void Update()
         {
-            DebugReloadScene();
+            DebugStuff();
         }
 
 
@@ -158,9 +161,10 @@ namespace Duelity
             _endingCoroutine = StartCoroutine(PlayerFailedEndingRoutine());
             IEnumerator PlayerFailedEndingRoutine()
             {
+                _anyEndingWasTriggered = true;
+                yield return new WaitForSecondsRealtime(1f);
                 _leftPlayerDuelMiniGameDisplay.PlayExitAnimation();
                 _rightPlayerDuelMiniGameDisplay.PlayExitAnimation();
-                _anyEndingWasTriggered = true;
                 // TODO: implement this ending
 
                 yield return new WaitForSecondsRealtime(3.5f);
@@ -300,11 +304,26 @@ namespace Duelity
 
         [Conditional(Log.EDITOR_DEFINE)]
         [Conditional(Log.DEVBUILD_DEFINE)]
-        void DebugReloadScene()
+        void DebugStuff()
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 Reload();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                _cameraShaker.ShakeCamera(Settings.CameraShakeShot);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                _cameraShaker.ShakeCamera(Settings.CameraShakeReloadSuccess);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                _cameraShaker.ShakeCamera(Settings.CameraShakeReloadFail);
             }
         }
     }

@@ -19,9 +19,10 @@ MonoBehaviour:
     _max: 1
   _dualTimeScale: 1
   _duelMiniGameConfig: {fileID: 11400000, guid: a07aaedfb4bb0f343b4c8176c5fe6cbb, type: 2}
-  _requiredDurationSecretEnding: 5
+  _requiredDurationSecretEnding: 15
   _walkAwaySpeed: 1
   _birdReactionDelay: 0.33
+  _failColor: {r: 0, g: 0, b: 0, a: 0}
   _fadeInDuration: 0
   _fadeInCurve:
     serializedVersion: 2
@@ -81,3 +82,6 @@ MonoBehaviour:
   _titleScreenMusic: {fileID: 11400000, guid: a7cbe47a1b35c584f97a4e960d6f3aa3, type: 2}
   _ambienceMusic: {fileID: 11400000, guid: d565131ad37498146ae2f31d9cac6f53, type: 2}
   _ambienceMusic2: {fileID: 11400000, guid: fac810481c9e19c499296c779900f402, type: 2}
+  _cameraShakeShot: {fileID: 11400000, guid: e04bc63a5dbc07243be3219deb023441, type: 2}
+  _cameraShakeReloadSuccess: {fileID: 11400000, guid: 5381569341f3a6840ac9d28b22023985, type: 2}
+  _cameraShakeReloadFail: {fileID: 11400000, guid: eb349efba259dae43ae5ba443eef8cf4, type: 2}
