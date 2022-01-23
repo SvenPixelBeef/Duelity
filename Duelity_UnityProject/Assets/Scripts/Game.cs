@@ -65,24 +65,27 @@ namespace Duelity
             FadeIn(Settings.FadeInDuration);
             yield return new WaitForSecondsRealtime(Settings.FadeInDuration);
 
-            FadeInText(_anyKeyPromptText, Settings.FadeInDuration, null);
             FadeInText(_titleText, Settings.FadeInDuration, null);
-           // yield return new WaitForSecondsRealtime(1f);
+            yield return new WaitForSecondsRealtime(Settings.FadeInDuration);
+
+            _anyKeyPromptText.enabled = true;
+            _anyKeyPromptText.GetComponent<Animation>().Play();
 
             yield return new WaitUntil(() => Input.anyKeyDown);
             // TODO: Play feedback sound here
 
-
+            _anyKeyPromptText.GetComponent<Animation>().Stop();
             FadeOutText(_anyKeyPromptText, 2f, null);
             FadeOutText(_titleText, 2f, null);
             yield return new WaitForSecondsRealtime(Settings.FadeInDuration);
-
-            _anyKeyPromptText.enabled = false;
 
             float musicFadeDuration = 1.5f;
             Settings.AmbienceMusic.Play(this, 0f, 1f);
             Settings.AmbienceMusic.Fade(this, Settings.AmbienceMusic.Volume, musicFadeDuration, true);
             Settings.TitleScreenMusic.Fade(this, 0f, musicFadeDuration, true);
+
+            Settings.AmbienceMusic2.Play(this, 0f, 1f);
+            Settings.AmbienceMusic2.Fade(this, Settings.AmbienceMusic2.Volume, musicFadeDuration, true);
             // yield return new WaitForSecondsRealtime(musicFadeDuration);
 
 
@@ -115,6 +118,9 @@ namespace Duelity
                     firstToWalkaway.WalkAway();
                     yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(0.33f, 1f));
                     secondToWalkaway.WalkAway();
+
+                    yield return new WaitForSecondsRealtime(3.5f);
+                    FadeInText(_titleText, 2f, null);
                 }
             }
         }
@@ -138,8 +144,14 @@ namespace Duelity
             IEnumerator PlayerFailedEndingRoutine()
             {
                 _anyEndingWasTriggered = true;
+                // TODO: implement this ending
 
-                yield return null;
+                yield return new WaitForSecondsRealtime(3.5f);
+                FadeInText(_titleText, 2f, null);
+                yield return new WaitForSecondsRealtime(2f);
+
+                yield return new WaitUntil(() => Input.anyKeyDown);
+                Reload();
             }
         }
 
@@ -150,7 +162,6 @@ namespace Duelity
             IEnumerator PlayerSuccededEndingRoutine()
             {
                 _anyEndingWasTriggered = true;
-                Time.timeScale = 1f;
                 winningPlayer.Shoot();
                 yield return null;
                 Player losingPlayer = _leftPlayer == winningPlayer ? _rightPlayer : _leftPlayer;
@@ -162,6 +173,10 @@ namespace Duelity
 
                 yield return new WaitForSecondsRealtime(3.5f);
                 FadeInText(_titleText, 2f, null);
+                yield return new WaitForSecondsRealtime(2f);
+
+                yield return new WaitUntil(() => Input.anyKeyDown);
+                Reload();
             }
         }
 

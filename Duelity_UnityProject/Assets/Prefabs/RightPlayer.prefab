@@ -9,11 +9,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3186050483108879738, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.408
+      value: -0.545
       objectReference: {fileID: 0}
     - target: {fileID: 3186050483108879738, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.069
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186050483108879738, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186050483108879738, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186050483108879738, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186050483108879738, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186050483108879738, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186050483108879738, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640748370426958916, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6020147190304624063, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
+      propertyPath: m_Flip.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7767921951099571352, guid: 11b3b91ab4c7a464696501872efde4ee, type: 3}
       propertyPath: _playerType

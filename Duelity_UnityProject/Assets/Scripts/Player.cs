@@ -25,7 +25,8 @@ namespace Duelity
             ? Game.Settings.KeyCodeLeftPlayer
             : Game.Settings.KeyCodeRightPlayer;
 
-        static readonly int parameterId = Animator.StringToHash("State");
+        static readonly int parameterIdState = Animator.StringToHash("State");
+        static readonly int parameterIdStateOffset = Animator.StringToHash("IdleOffset");
 
         const int ANIM_IDLE = 0;
         const int ANIM_DRAW_WEAPON = 1;
@@ -40,6 +41,7 @@ namespace Duelity
             this.ListenTo(Events.PlayerReloadedAll, OnPlayerReloadedAll);
             this.ListenTo(Events.PlayerFailedReload, OnPlayerFailedReload);
             this.ListenTo(Events.SecretEndingTriggered, OnPlayerFailedReload);
+            _animator.SetFloat(parameterIdStateOffset, UnityEngine.Random.value);
         }
 
         void OnDestroy()
@@ -85,7 +87,7 @@ namespace Duelity
         {
             _duelMiniGame = new DuelMiniGame(Game.Settings.DuelMiniGameConfig);
             _duelMiniGameDisplay.AssignDuelMiniGame(_duelMiniGame);
-            _animator.SetInteger(parameterId, ANIM_DRAW_WEAPON);
+            _animator.SetInteger(parameterIdState, ANIM_DRAW_WEAPON);
         }
 
         void OnPlayerReloadedAll(Player player)
@@ -116,14 +118,14 @@ namespace Duelity
 
         public void Shoot()
         {
-            _animator.SetInteger(parameterId, ANIM_SHOOT);
+            _animator.SetInteger(parameterIdState, ANIM_SHOOT);
             _shootingParticleSystem.Play();
             Game.Settings.GunShotSound.Play();
         }
 
         public void Die()
         {
-            _animator.SetInteger(parameterId, ANIM_DIE);
+            _animator.SetInteger(parameterIdState, ANIM_DIE);
 
             // TODO:Sound effect for dying goes here
 
@@ -131,13 +133,13 @@ namespace Duelity
 
         public void StandDown()
         {
-            _animator.SetInteger(parameterId, ANIM_PUT_WEAPON_AWAY);
+            _animator.SetInteger(parameterIdState, ANIM_PUT_WEAPON_AWAY);
         }
 
         public void WalkAway()
         {
             _spriteRenderer.flipX = !_spriteRenderer.flipX;
-            _animator.SetInteger(parameterId, ANIM_WALK);
+            _animator.SetInteger(parameterIdState, ANIM_WALK);
             StartCoroutine(WalkAwayRoutine());
             IEnumerator WalkAwayRoutine()
             {
