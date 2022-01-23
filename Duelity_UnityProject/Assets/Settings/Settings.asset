@@ -15,11 +15,11 @@ MonoBehaviour:
   _keyCodeLeftPlayer: 276
   _keyCodeRightPlayer: 275
   _dualStartTimeRange:
-    _min: 5
-    _max: 10
+    _min: 3
+    _max: 5
   _dualTimeScale: 1
   _duelMiniGameConfig: {fileID: 11400000, guid: a07aaedfb4bb0f343b4c8176c5fe6cbb, type: 2}
-  _requiredDurationSecretEnding: 30
+  _requiredDurationSecretEnding: 45
   _walkAwaySpeed: 1
   _walkAwayDelayAfterShooting: 5
   _birdReactionDelay: 0.33

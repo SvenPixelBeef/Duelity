@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DuelMiniGameConfig
   m_EditorClassIdentifier: 
   _startingSpeedRange:
-    _min: 2
+    _min: 2.5
     _max: 3
   _startingDirection: 1
   _randomizeStartingDirection: 1

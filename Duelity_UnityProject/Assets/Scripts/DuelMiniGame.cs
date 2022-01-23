@@ -41,11 +41,7 @@ namespace Duelity
                 _floatRanges.Add(range);
             }
 
-            //_targetRangeIndices = UnityEngine.Random.value >= .5f
-            //    ? new HashSet<int>() { 0, 2, 4 }
-            //    : new HashSet<int>() { 1, 3, 5 };
-
-            UnityEngine.Random.InitState(1);
+            UnityEngine.Random.InitState(Time.frameCount);
             _targetRangeIndices = new HashSet<int>();
             while (_targetRangeIndices.Count < 3)
             {

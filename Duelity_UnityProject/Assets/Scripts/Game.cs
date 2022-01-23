@@ -131,6 +131,7 @@ namespace Duelity
             yield return new WaitForSecondsRealtime(Settings.RequiredDurationSecretEnding);
             if (!_anyEndingWasTriggered)
             {
+                Settings.CrowsSound.Play();
                 Events.SecretEndingTriggered.RaiseEvent(Events.NoArgs);
                 _anyEndingWasTriggered = true;
                 _leftPlayerDuelMiniGameDisplay.PlayExitAnimation();
