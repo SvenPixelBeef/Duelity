@@ -30,9 +30,16 @@ namespace Duelity
         [SerializeField, Space] float _walkAwaySpeed = 3f;
         public float WalkAwaySpeed => _walkAwaySpeed;
 
+        [SerializeField, Space] float _walkAwayDelayAfterShooting = 3f;
+        public float WalkAwayDelayAfterShooting => _walkAwayDelayAfterShooting;
+
+
 
         [SerializeField, Space] float _birdReactionDelay = .33f;
         public float BirdReactionDelay => _birdReactionDelay;
+
+        [SerializeField, Space] float _shootingDelay = 0f;
+        public float ShootingDelay => _shootingDelay;
 
 
         [SerializeField, Space] Color _failColor;
@@ -66,6 +73,12 @@ namespace Duelity
 
         [SerializeField, Expandable] Sound _crowsSound;
         public Sound CrowsSound => _crowsSound;
+
+        [SerializeField, Expandable] Sound _playerFail;
+        public Sound PlayerFail => _playerFail;
+
+        [SerializeField, Expandable] Sound _duelStart;
+        public Sound DuelStart => _duelStart;
 
         [Header("Music")]
         [Space]

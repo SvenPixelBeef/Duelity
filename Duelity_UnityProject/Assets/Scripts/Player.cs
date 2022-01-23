@@ -33,7 +33,7 @@ namespace Duelity
         const int ANIM_SHOOT = 2;
         const int ANIM_DIE = 3;
         const int ANIM_WALK = 4;
-        const int ANIM_PUT_WEAPON_AWAY = 5;
+        const int ANIM_WALK_WITHOUT_GUN = 5;
 
         void Awake()
         {
@@ -67,17 +67,15 @@ namespace Duelity
                     _duelMiniGame.RemoveRange(hitRange, out int removedIndex);
                     _duelMiniGameDisplay.UpdateSingleSlot(removedIndex);
                     Game.CameraShaker.ShakeObject(_duelMiniGameDisplay.transform, Game.Settings.CameraShakeReloadSuccess);
+                    Game.Settings.ReloadSounds.RandomElement().Play();
                     if (_duelMiniGame.TargetRangeIndices.Count == 0)
                     {
                         Events.PlayerReloadedAll.RaiseEvent(this);
                     }
-                    else
-                    {
-                        Game.Settings.ReloadSounds.RandomElement().Play();
-                    }
                 }
                 else
                 {
+                    Game.Settings.PlayerFail.Play();
                     Game.CameraShaker.ShakeObject(_duelMiniGameDisplay.transform, Game.Settings.CameraShakeReloadFail);
                     int indexOfMissedElement = _duelMiniGame.GetIndexForValue(_duelMiniGame.Value);
                     _duelMiniGameDisplay.UpdateSingleSlot(indexOfMissedElement, false);
@@ -137,9 +135,14 @@ namespace Duelity
 
         }
 
+        bool _fumbled;
+
+        public bool Fumbled => _fumbled;
+
         public void Fumble()
         {
             _animator.SetInteger(parameterIdState, ANIM_FUMBLE);
+            _fumbled = true;
         }
 
         public void StandDown()
@@ -150,7 +153,7 @@ namespace Duelity
         public void WalkAway()
         {
             _spriteRenderer.flipX = !_spriteRenderer.flipX;
-            _animator.SetInteger(parameterIdState, ANIM_WALK);
+            _animator.SetInteger(parameterIdState, _fumbled ? ANIM_WALK_WITHOUT_GUN : ANIM_WALK);
             StartCoroutine(WalkAwayRoutine());
             IEnumerator WalkAwayRoutine()
             {

@@ -106,7 +106,7 @@ namespace Duelity
             Events.DuelStarted.RaiseEvent(Events.NoArgs);
             _leftPlayerDuelMiniGameDisplay.PlayEnterAnimation();
             _rightPlayerDuelMiniGameDisplay.PlayEnterAnimation();
-
+            Settings.DuelStart.Play();
 
             // TODO: Play more/other sounds/music here?
 
@@ -119,7 +119,6 @@ namespace Duelity
                 _leftPlayerDuelMiniGameDisplay.PlayExitAnimation();
                 _rightPlayerDuelMiniGameDisplay.PlayExitAnimation();
                 _endingCoroutine = StartCoroutine(SecretEndingRoutine());
-
             }
         }
 
@@ -164,7 +163,7 @@ namespace Duelity
                     yield return null;
                     playerWhoFailed.Die();
 
-                    yield return new WaitForSecondsRealtime(2f);
+                    yield return new WaitForSecondsRealtime(Settings.WalkAwayDelayAfterShooting);
 
                     winningPlayer.WalkAway();
 
@@ -189,15 +188,16 @@ namespace Duelity
             _endingCoroutine = StartCoroutine(PlayerSuccededEndingRoutine());
             IEnumerator PlayerSuccededEndingRoutine()
             {
+                _anyEndingWasTriggered = true;
                 _leftPlayerDuelMiniGameDisplay.PlayExitAnimation();
                 _rightPlayerDuelMiniGameDisplay.PlayExitAnimation();
-                _anyEndingWasTriggered = true;
+                yield return new WaitForSecondsRealtime(Settings.ShootingDelay);
                 winningPlayer.Shoot();
                 yield return null;
                 Player losingPlayer = _leftPlayer == winningPlayer ? _rightPlayer : _leftPlayer;
                 losingPlayer.Die();
 
-                yield return new WaitForSecondsRealtime(2f);
+                yield return new WaitForSecondsRealtime(Settings.WalkAwayDelayAfterShooting);
 
                 winningPlayer.WalkAway();
 
@@ -319,11 +319,13 @@ namespace Duelity
 
             yield return new WaitForSecondsRealtime(1f);
 
-            Player firstToWalkaway = UnityEngine.Random.value >= .5f ? _leftPlayer : _rightPlayer;
+            Player firstToWalkaway = (_leftPlayer.Fumbled || _rightPlayer.Fumbled)
+                ? _leftPlayer.Fumbled ? _rightPlayer : _leftPlayer
+                : UnityEngine.Random.value >= .5f ? _leftPlayer : _rightPlayer;
             Player secondToWalkaway = firstToWalkaway == _leftPlayer ? _rightPlayer : _leftPlayer;
 
             firstToWalkaway.WalkAway();
-            yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(0.33f, 1f));
+            yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(1f, 2f));
             secondToWalkaway.WalkAway();
 
             yield return new WaitForSecondsRealtime(3.5f);
