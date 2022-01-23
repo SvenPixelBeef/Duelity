@@ -16,9 +16,13 @@ namespace Duelity
 
         float _elapsedTime;
 
-        List<FloatRange> _validFloatRanges;
+        List<FloatRange> _floatRanges;
 
-        public IReadOnlyCollection<FloatRange> ValidFloatRanges => _validFloatRanges;
+        HashSet<int> _targetRangeIndices;
+
+        public List<FloatRange> FloatRanges => _floatRanges;
+
+        public HashSet<int> TargetRangeIndices => _targetRangeIndices;
 
         public DuelMiniGame(DuelMiniGameConfig config)
         {
@@ -30,35 +34,25 @@ namespace Duelity
             Value = UnityEngine.Random.value;
             const int magicNumber = 6;
             const float chunkSize = 1f / magicNumber;
-            _validFloatRanges = new List<FloatRange>();
+            _floatRanges = new List<FloatRange>();
             for (int i = 0; i < magicNumber; i++)
             {
                 var range = new FloatRange(i * chunkSize, (i + 1) * chunkSize);
-                _validFloatRanges.Add(range);
+                _floatRanges.Add(range);
             }
 
-            // TODO: make this less garbage
-            var indicesToRemove = new HashSet<int>();
-            while (indicesToRemove.Count < (magicNumber / 2))
-            {
-                int toRemove = UnityEngine.Random.Range(0, magicNumber);
-                indicesToRemove.Add(toRemove);
-            }
-
-            foreach (var index in indicesToRemove)
-            {
-                _validFloatRanges[index] = null;
-            }
-
-            _validFloatRanges.RemoveAll((r => r == null));
+            _targetRangeIndices = UnityEngine.Random.value >= .5f
+                ? new HashSet<int>() { 0, 2, 4 }
+                : new HashSet<int>() { 0, 2, 4 };
         }
 
         public void FlipDirection() => SignOfDirection *= -1;
 
         public bool IsInsideValidRange(float value, out FloatRange floatRange)
         {
-            floatRange = _validFloatRanges.FirstOrDefault(r => r.ValueIsInsideRange(value));
-            return floatRange != null;
+            floatRange = _floatRanges.First(r => r.ValueIsInsideRange(value));
+            int index = _floatRanges.IndexOf(floatRange);
+            return _targetRangeIndices.Contains(index);
         }
 
         public bool IsInsideValidRange(out FloatRange floatRange)
@@ -68,14 +62,13 @@ namespace Duelity
 
         public bool RemoveRange(FloatRange floatRange)
         {
-            var removed = _validFloatRanges.Remove(floatRange);
-            if (removed)
+            int index = _floatRanges.IndexOf(floatRange);
+            bool removed = _targetRangeIndices.Remove(index);
+
+            float chance = Config.DirectionChangeChance.GetRandomValueInsideRange();
+            if (UnityEngine.Random.value <= chance)
             {
-                float chance = Config.DirectionChangeChance.GetRandomValueInsideRange();
-                if (UnityEngine.Random.value <= chance)
-                {
-                    FlipDirection();
-                }
+                FlipDirection();
             }
 
             return removed;

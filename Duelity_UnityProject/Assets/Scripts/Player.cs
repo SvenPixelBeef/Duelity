@@ -63,8 +63,8 @@ namespace Duelity
                 if (hit)
                 {
                     _duelMiniGame.RemoveRange(hitRange);
-
-                    if (_duelMiniGame.ValidFloatRanges.Count == 0)
+                    _duelMiniGameDisplay.UpdateReloadSlots();
+                    if (_duelMiniGame.TargetRangeIndices.Count == 0)
                     {
                         Events.PlayerReloadedAll.RaiseEvent(this);
                     }

@@ -54,21 +54,29 @@ namespace Duelity
             Instance = this;
             this.ListenTo(Events.PlayerReloadedAll, OnPlayerReloadedAll);
             this.ListenTo(Events.PlayerFailedReload, OnPlayerFailedReload);
+
+            _anyKeyPromptText.enabled = false;
+            _titleText.enabled = false;
         }
 
         IEnumerator Start()
         {
-            _anyKeyPromptText.enabled = false;
             Settings.TitleScreenMusic.Play(target: this);
-            Time.timeScale = 1f;
             FadeIn(Settings.FadeInDuration);
             yield return new WaitForSecondsRealtime(Settings.FadeInDuration);
 
-            _anyKeyPromptText.enabled = true;
+            FadeInText(_anyKeyPromptText, Settings.FadeInDuration, null);
+            FadeInText(_titleText, Settings.FadeInDuration, null);
+           // yield return new WaitForSecondsRealtime(1f);
 
-            yield return new WaitUntil(() => Input.anyKeyDown);//|| Application.isEditor
+            yield return new WaitUntil(() => Input.anyKeyDown);
+            // TODO: Play feedback sound here
 
-            _titleText.enabled = false;
+
+            FadeOutText(_anyKeyPromptText, 2f, null);
+            FadeOutText(_titleText, 2f, null);
+            yield return new WaitForSecondsRealtime(Settings.FadeInDuration);
+
             _anyKeyPromptText.enabled = false;
 
             float musicFadeDuration = 1.5f;
@@ -82,8 +90,6 @@ namespace Duelity
             yield return new WaitForSecondsRealtime(duelTriggerTime);
 
             Events.DuelStarted.RaiseEvent(Events.NoArgs);
-            //   Time.timeScale = 0.1f;
-
             // TODO: Play more/other sounds/music here?
 
 
@@ -153,6 +159,9 @@ namespace Duelity
                 yield return new WaitForSecondsRealtime(2f);
 
                 winningPlayer.WalkAway();
+
+                yield return new WaitForSecondsRealtime(3.5f);
+                FadeInText(_titleText, 2f, null);
             }
         }
 
@@ -180,6 +189,28 @@ namespace Duelity
 
             _crossFadeCoroutine
                 = StartCoroutine(ColorLerpRoutine(startingColor, targetColor, duration, (color) => _fadeOutSpriteRenderer.color = color, curve, callback));
+        }
+
+        void FadeOutText(TextMeshPro text, float duration, AnimationCurve curve, Action doneCallback = null)
+        {
+            text.enabled = true;
+            var baseColor = text.color;
+            var startingColor = baseColor;
+            startingColor.a = 1f;
+            var targetColor = baseColor;
+            targetColor.a = 0f;
+            StartCoroutine(ColorLerpRoutine(startingColor, targetColor, duration, (color) => text.color = color, curve, doneCallback));
+        }
+
+        void FadeInText(TextMeshPro text, float duration, AnimationCurve curve, Action doneCallback = null)
+        {
+            text.enabled = true;
+            var baseColor = text.color;
+            var startingColor = baseColor;
+            startingColor.a = 0f;
+            var targetColor = baseColor;
+            targetColor.a = 1f;
+            StartCoroutine(ColorLerpRoutine(startingColor, targetColor, duration, (color) => text.color = color, curve, doneCallback));
         }
 
         IEnumerator ColorLerpRoutine(Color startingColor,

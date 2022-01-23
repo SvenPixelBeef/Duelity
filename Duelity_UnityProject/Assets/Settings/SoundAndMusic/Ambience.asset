@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7280a28b73a5bf4f8015ec3a2f0d6a4, type: 3}
-  m_Name: AmbienceMusic
+  m_Name: Ambience
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: c9f69bfbef464bc45b3231258309f66e, type: 3}
   audioMixerGroup: {fileID: 0}
-  volume: 0.075
+  volume: 0.09
   pitch: 1
   loop: 1

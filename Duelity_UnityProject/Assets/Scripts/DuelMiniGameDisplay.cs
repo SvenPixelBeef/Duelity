@@ -1,4 +1,5 @@
 ﻿using Duelity.Utility;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Duelity
@@ -9,12 +10,21 @@ namespace Duelity
 
         [SerializeField] Transform _indicator;
 
+        [SerializeField] Transform _maskParent;
+
+        List<SpriteMask> _masks;
+
 
         DuelMiniGame _duelMiniGame;
 
         void Awake()
         {
             _mainSpriteRenderer.gameObject.SetActive(false);
+            _masks = new List<SpriteMask>(_maskParent.childCount);
+            for (int i = 0; i < _maskParent.childCount; i++)
+            {
+                _masks.Add(_maskParent.GetChild(i).GetComponent<SpriteMask>());
+            }
         }
 
         void Update()
@@ -30,8 +40,12 @@ namespace Duelity
             if (_duelMiniGame == null)
                 return;
 
-            foreach (var range in _duelMiniGame.ValidFloatRanges)
+            for (int i = 0; i < _duelMiniGame.FloatRanges.Count; i++)
             {
+                FloatRange range = _duelMiniGame.FloatRanges[i];
+                if (!_duelMiniGame.TargetRangeIndices.Contains(i))
+                    continue;
+
                 float minAngle = Mathf.Lerp(0f, 360f, range.Min);
                 float maxAngle = Mathf.Lerp(0f, 360f, range.Max);
 
@@ -52,12 +66,26 @@ namespace Duelity
             _duelMiniGame = duelMiniGame;
             _mainSpriteRenderer.gameObject.SetActive(true);
             UpdateAngle();
+            UpdateReloadSlots();
         }
 
         void UpdateAngle()
         {
             float value = Mathf.Lerp(0f, 360f, _duelMiniGame.Value);
             _indicator.rotation = Quaternion.Euler(0, 0, value - 90f);
+        }
+
+        public void UpdateReloadSlots()
+        {
+            foreach (var mask in _masks)
+            {
+                mask.enabled = true;
+            }
+
+            foreach (var index in _duelMiniGame.TargetRangeIndices)
+            {
+                _masks[index].enabled = false;
+            }
         }
     }
 }
