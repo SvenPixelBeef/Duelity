@@ -12,7 +12,9 @@ namespace Duelity
 
         [SerializeField] Transform _maskParent;
 
-        List<SpriteRenderer> _spriteRenderers;
+        [SerializeField] List<SpriteRenderer> _spriteRenderers;
+
+        [SerializeField] float _radius = .234f;
 
 
         DuelMiniGame _duelMiniGame;
@@ -20,11 +22,6 @@ namespace Duelity
         void Awake()
         {
             _mainSpriteRenderer.gameObject.SetActive(false);
-            _spriteRenderers = new List<SpriteRenderer>(_maskParent.childCount);
-            for (int i = 0; i < _maskParent.childCount; i++)
-            {
-                _spriteRenderers.Add(_maskParent.GetChild(i).GetComponent<SpriteRenderer>());
-            }
         }
 
         void Update()
@@ -59,6 +56,27 @@ namespace Duelity
                 Gizmos.DrawLine(center, pos2);
                 Gizmos.DrawLine(pos1, pos2);
             }
+        }
+
+        void OnValidate()
+        {
+            _spriteRenderers = new List<SpriteRenderer>(_maskParent.childCount);
+            for (int i = 0; i < _maskParent.childCount; i++)
+            {
+                var child = _maskParent.GetChild(i);
+                _spriteRenderers.Add(child.GetComponent<SpriteRenderer>());
+
+                float increment = 1f / 6;
+                float minAngle = Mathf.Lerp(0f, 360f, i * (increment));
+                float maxAngle = Mathf.Lerp(0f, 360f, (i + 1) * (increment));
+                float targetAngle = Mathf.Lerp(minAngle, maxAngle, .5f);
+
+                Vector2 center = transform.position;
+                Vector2 pos = MathHelper.GetPointOnCircle(center, _radius, targetAngle * Mathf.Deg2Rad);
+                child.localPosition = transform.InverseTransformPoint(pos);
+            }
+
+
         }
 
         public void AssignDuelMiniGame(DuelMiniGame duelMiniGame)
