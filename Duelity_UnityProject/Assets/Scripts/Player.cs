@@ -121,11 +121,10 @@ namespace Duelity
             _animator.SetInteger(parameterIdState, ANIM_SHOOT);
             _shootingParticleSystem.Play();
             Game.Settings.GunShotSound.Play();
-            this.WaitAndDo(new WaitForSecondsRealtime(UnityEngine.Random.Range(0.75f, 1.25f)), () =>
+            this.WaitAndDo(new WaitForSecondsRealtime(Game.Settings.BirdReactionDelay), () =>
             {
                 Game.Settings.CrowsSound.Play();
-                // TODO: Crow particle effect play here
-
+                Game.BirdsPS.Play();
             });
         }
 

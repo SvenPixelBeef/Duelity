@@ -24,6 +24,8 @@ namespace Duelity
         [SerializeField] TextMeshPro _titleText;
         [SerializeField] TextMeshPro _anyKeyPromptText;
 
+        [SerializeField] ParticleSystem _birdsPS;
+
 
         Color FadeOutColor => Color.black;
         Color FadeInColor => new Color(0f, 0f, 0f, 0f);
@@ -40,6 +42,8 @@ namespace Duelity
 
         public static Settings Settings => Instance._settings;
         public static AudioManager Audio => _audio ??= new AudioManager(10);
+
+        public static ParticleSystem BirdsPS => Instance._birdsPS;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         static void Init()

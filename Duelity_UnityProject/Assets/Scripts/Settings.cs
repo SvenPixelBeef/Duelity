@@ -31,6 +31,9 @@ namespace Duelity
         public float WalkAwaySpeed => _walkAwaySpeed;
 
 
+        [SerializeField, Space] float _birdReactionDelay = .33f;
+        public float BirdReactionDelay => _birdReactionDelay;
+
         [Header("Fading in and out")]
         [Space]
 
