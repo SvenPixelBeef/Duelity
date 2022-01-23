@@ -17,7 +17,308 @@
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
    sodipodi:docname="Revolver.svg">
   <defs
-     id="defs2" />
+     id="defs2">
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1165">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1163"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1223" />
+      <feColorMatrix
+         id="feColorMatrix1225"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1169">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1167"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1227" />
+      <feColorMatrix
+         id="feColorMatrix1229"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1173">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1171"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1231" />
+      <feColorMatrix
+         id="feColorMatrix1233"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1177">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1175"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1235" />
+      <feColorMatrix
+         id="feColorMatrix1237"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1181">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1179"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1239" />
+      <feColorMatrix
+         id="feColorMatrix1241"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1185">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1183"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1243" />
+      <feColorMatrix
+         id="feColorMatrix1245"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1189">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1187"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1247" />
+      <feColorMatrix
+         id="feColorMatrix1249"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1193">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1191"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1251" />
+      <feColorMatrix
+         id="feColorMatrix1253"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1197">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1195"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1255" />
+      <feColorMatrix
+         id="feColorMatrix1257"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1201">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1199"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1259" />
+      <feColorMatrix
+         id="feColorMatrix1261"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1205">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1203"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1263" />
+      <feColorMatrix
+         id="feColorMatrix1265"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1209">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1207"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1267" />
+      <feColorMatrix
+         id="feColorMatrix1269"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1213">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1211"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1271" />
+      <feColorMatrix
+         id="feColorMatrix1273"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1217">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1215"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1275" />
+      <feColorMatrix
+         id="feColorMatrix1277"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB;"
+       id="filter1221">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix1219"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1279" />
+      <feColorMatrix
+         id="feColorMatrix1281"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         in="fbSourceGraphic" />
+    </filter>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -25,11 +326,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-1324.5931"
-     inkscape:cy="661.53431"
+     inkscape:zoom="0.12374369"
+     inkscape:cx="-2527.6226"
+     inkscape:cy="-187.48284"
      inkscape:document-units="mm"
-     inkscape:current-layer="g4707"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:snap-center="true"
      inkscape:lockguides="false"
@@ -46,7 +347,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -55,119 +356,321 @@
      inkscape:groupmode="layer"
      id="layer1">
     <ellipse
+       ry="21.392368"
+       rx="8.8438072"
+       cy="-151.86057"
+       cx="-74.014214"
+       id="ellipse970"
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#7b3b24;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1221)"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <ellipse
+       ry="13.363476"
+       rx="10.156241"
+       cy="-122.8317"
+       cx="-73.153961"
+       id="ellipse972"
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#1d1d1d;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1217)"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#7b3b24;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1213)"
+       id="path965"
+       cx="-421.24747"
+       cy="-149.86606"
+       rx="10.125546"
+       ry="21.907515"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#1d1d1d;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1209)"
+       id="path955"
+       cx="-421.75131"
+       cy="-120.49648"
+       rx="10.156241"
+       ry="13.363476"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <rect
+       style="opacity:1;fill:#7b3b24;fill-opacity:1;fill-rule:nonzero;stroke:#361002;stroke-width:6.05606747;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1205)"
+       id="rect945"
+       width="480.90018"
+       height="418.82529"
+       x="-495.18658"
+       y="-93.059219"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <rect
+       style="opacity:1;fill:#7b3b24;fill-opacity:1;fill-rule:nonzero;stroke:#361002;stroke-width:4.79277658;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1201)"
+       id="rect951"
+       width="480.8075"
+       height="14.244815"
+       x="-128.11584"
+       y="483.15515"
+       transform="rotate(90)"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <ellipse
        style="opacity:1;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:12.44147873;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
-       id="path4728"
-       cx="-272.26242"
-       cy="126.91479"
+       id="path4728-1"
+       cx="-1006.267"
+       cy="128.87627"
        inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
-       inkscape:export-xdpi="39.32"
-       inkscape:export-ydpi="39.32"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892"
        rx="155.27927"
        ry="155.27925" />
     <path
        style="opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4.69230747;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
-       d="m -272.24323,-9.829164 a 136.74355,136.74356 0 0 0 -42.84118,6.9946283 34.989689,34.989693 0 0 1 -4.05963,23.8766877 34.989689,34.989693 0 0 1 -47.79703,12.807398 34.989689,34.989693 0 0 1 -3.36175,-2.236649 136.74355,136.74356 0 0 0 -35.6807,67.544734 34.989689,34.989693 0 0 1 3.12074,1.282725 34.989689,34.989693 0 0 1 0.17652,0.0805 34.989689,34.989693 0 0 1 2.77691,1.48109 34.989689,34.989693 0 0 1 0.3802,0.22066 34.989689,34.989693 0 0 1 2.42288,1.62268 34.989689,34.989693 0 0 1 0.53394,0.38604 34.989689,34.989693 0 0 1 2.07225,1.71094 34.989689,34.989693 0 0 1 0.67119,0.59602 34.989689,34.989693 0 0 1 1.71242,1.72841 34.989689,34.989693 0 0 1 0.78417,0.85161 34.989689,34.989693 0 0 1 1.36761,1.68816 34.989689,34.989693 0 0 1 0.85159,1.13287 34.989689,34.989693 0 0 1 1.49369,2.27642 34.989689,34.989693 0 0 1 0.23763,0.3802 34.989689,34.989693 0 0 1 3.81666,9.73614 34.989689,34.989693 0 0 1 0.76916,10.42913 34.989689,34.989693 0 0 1 0,4.9e-4 34.989689,34.989693 0 0 1 -0.0499,0.39088 34.989689,34.989693 0 0 1 -2.29775,9.79966 34.989689,34.989693 0 0 1 -3.20367,6.2085 34.989689,34.989693 0 0 1 -4.37339,5.44807 34.989689,34.989693 0 0 1 -2.57274,2.36953 34.989689,34.989693 0 0 1 -4.89523,3.41414 34.989689,34.989693 0 0 1 -3.49803,1.74635 34.989689,34.989693 0 0 1 -0.005,0.003 136.74355,136.74356 0 0 0 40.605,64.65968 34.989689,34.989693 0 0 1 22.60609,-8.33263 34.989689,34.989693 0 0 1 34.98962,34.98963 34.989689,34.989693 0 0 1 -0.22599,3.8317 136.74355,136.74356 0 0 0 33.47362,4.36853 136.74355,136.74356 0 0 0 42.82858,-7.05961 34.989689,34.989693 0 0 1 4.07272,-23.81171 34.989689,34.989693 0 0 1 47.79654,-12.80691 34.989689,34.989693 0 0 1 3.25409,2.14984 136.74355,136.74356 0 0 0 35.75006,-67.4715 34.989689,34.989693 0 0 1 -18.56294,-15.42524 34.989689,34.989693 0 0 1 12.80691,-47.796539 34.989689,34.989693 0 0 1 3.50288,-1.748778 136.74355,136.74356 0 0 0 -40.605,-64.659688 34.989689,34.989693 0 0 1 -22.60608,8.332642 34.989689,34.989693 0 0 1 -34.98963,-34.9896256 34.989689,34.989693 0 0 1 0.22551,-3.8316974 136.74355,136.74356 0 0 0 -33.47364,-4.36855 z"
+       d="m -1005.6308,-9.829164 a 136.74355,136.74356 0 0 0 -42.8412,6.9946283 34.989689,34.989693 0 0 1 -4.0596,23.8766877 34.989689,34.989693 0 0 1 -47.7971,12.807398 34.989689,34.989693 0 0 1 -3.3617,-2.236649 136.74355,136.74356 0 0 0 -35.6807,67.544734 34.989689,34.989693 0 0 1 3.1207,1.282725 34.989689,34.989693 0 0 1 0.1766,0.0805 34.989689,34.989693 0 0 1 2.7769,1.48109 34.989689,34.989693 0 0 1 0.3802,0.22066 34.989689,34.989693 0 0 1 2.4228,1.62268 34.989689,34.989693 0 0 1 0.534,0.38604 34.989689,34.989693 0 0 1 2.0722,1.71094 34.989689,34.989693 0 0 1 0.6712,0.59602 34.989689,34.989693 0 0 1 1.7124,1.72841 34.989689,34.989693 0 0 1 0.7842,0.85161 34.989689,34.989693 0 0 1 1.3676,1.68816 34.989689,34.989693 0 0 1 0.8516,1.13287 34.989689,34.989693 0 0 1 1.4937,2.27642 34.989689,34.989693 0 0 1 0.2376,0.3802 34.989689,34.989693 0 0 1 3.8167,9.73614 34.989689,34.989693 0 0 1 0.7692,10.42913 34.989689,34.989693 0 0 1 0,4.9e-4 34.989689,34.989693 0 0 1 -0.05,0.39088 34.989689,34.989693 0 0 1 -2.2978,9.79966 34.989689,34.989693 0 0 1 -3.2037,6.2085 34.989689,34.989693 0 0 1 -4.3734,5.44807 34.989689,34.989693 0 0 1 -2.5727,2.36953 34.989689,34.989693 0 0 1 -4.8952,3.41414 34.989689,34.989693 0 0 1 -3.4981,1.74635 34.989689,34.989693 0 0 1 -0.01,0.003 136.74355,136.74356 0 0 0 40.605,64.65968 34.989689,34.989693 0 0 1 22.6061,-8.33263 34.989689,34.989693 0 0 1 34.9897,34.98963 34.989689,34.989693 0 0 1 -0.226,3.8317 136.74355,136.74356 0 0 0 33.4736,4.36853 136.74355,136.74356 0 0 0 42.82857,-7.05961 34.989689,34.989693 0 0 1 4.07272,-23.81171 34.989689,34.989693 0 0 1 47.79654,-12.80691 34.989689,34.989693 0 0 1 3.25409,2.14984 136.74355,136.74356 0 0 0 35.75006,-67.4715 34.989689,34.989693 0 0 1 -18.56294,-15.42524 34.989689,34.989693 0 0 1 12.80691,-47.796539 34.989689,34.989693 0 0 1 3.50288,-1.748778 136.74355,136.74356 0 0 0 -40.605,-64.659688 34.989689,34.989693 0 0 1 -22.60608,8.332642 34.989689,34.989693 0 0 1 -34.98963,-34.9896256 34.989689,34.989693 0 0 1 0.22551,-3.8316974 136.74355,136.74356 0 0 0 -33.47363,-4.36855 z"
        id="path4664"
        inkscape:connector-curvature="0"
        inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
-       inkscape:export-xdpi="39.32"
-       inkscape:export-ydpi="39.32" />
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
     <g
        id="g856"
        transform="matrix(0.98951439,0,0,0.98951439,0.83323112,1.3629396)" />
-    <g
-       id="g4707"
+    <circle
+       inkscape:export-ydpi="20.092892"
+       inkscape:export-xdpi="20.092892"
        inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+       r="26.452566"
+       style="opacity:1;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="path815"
+       cx="-1005.6707"
+       cy="126.91473" />
+    <circle
+       inkscape:export-ydpi="20.092892"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+       r="37.284096"
+       cy="51.77309"
+       cx="-1005.65"
+       id="circle4640"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       inkscape:transform-center-y="-75.141708" />
+    <circle
+       inkscape:export-ydpi="20.092892"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+       inkscape:transform-center-y="-37.570856"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="circle4650"
+       cx="-612.73645"
+       cy="-882.60278"
+       r="37.284096"
+       transform="rotate(-60)"
+       inkscape:transform-center-x="65.074628" />
+    <circle
+       inkscape:export-ydpi="20.092892"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+       inkscape:transform-center-x="65.074623"
+       transform="rotate(-120)"
+       r="37.284096"
+       cy="-1009.5176"
+       cx="392.91357"
+       id="circle4652"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       inkscape:transform-center-y="37.570858" />
+    <circle
+       inkscape:export-ydpi="20.092892"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+       inkscape:transform-center-y="75.141701"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="circle4654"
+       cx="1005.65"
+       cy="-202.0565"
+       r="37.284096"
+       transform="scale(-1)"
+       inkscape:transform-center-x="-7.6290713e-006" />
+    <circle
+       inkscape:export-ydpi="20.092892"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+       inkscape:transform-center-x="-65.074629"
+       transform="rotate(120)"
+       r="37.284096"
+       cy="732.31934"
+       cx="612.73645"
+       id="circle4656"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       inkscape:transform-center-y="37.570844" />
+    <circle
+       inkscape:export-ydpi="20.092892"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+       inkscape:transform-center-y="-37.57086"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="circle4658"
+       cx="-392.91357"
+       cy="859.23413"
+       r="37.284096"
+       transform="rotate(60)"
+       inkscape:transform-center-x="-65.074619" />
+    <circle
+       inkscape:export-ydpi="39.32"
        inkscape:export-xdpi="39.32"
-       inkscape:export-ydpi="39.32">
-      <circle
-         cy="126.91473"
-         cx="-272.28305"
-         id="path815"
-         style="opacity:1;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         r="26.452566"
-         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
-         inkscape:export-xdpi="75"
-         inkscape:export-ydpi="75" />
-      <circle
-         inkscape:transform-center-y="-75.141708"
-         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
-         id="circle4640"
-         cx="-272.26242"
-         cy="51.77309"
-         r="37.284096"
-         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine-bullet.png"
-         inkscape:export-xdpi="75"
-         inkscape:export-ydpi="75" />
-      <circle
-         inkscape:transform-center-x="65.074628"
-         transform="rotate(-60)"
-         r="37.284096"
-         cy="-247.47049"
-         cx="-246.04265"
-         id="circle4650"
-         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
-         inkscape:transform-center-y="-37.570856"
-         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
-         inkscape:export-xdpi="75"
-         inkscape:export-ydpi="75" />
-      <circle
-         inkscape:transform-center-y="37.570858"
-         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
-         id="circle4652"
-         cx="26.219769"
-         cy="-374.38528"
-         r="37.284096"
-         transform="rotate(-120)"
-         inkscape:transform-center-x="65.074623"
-         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
-         inkscape:export-xdpi="75"
-         inkscape:export-ydpi="75" />
-      <circle
-         inkscape:transform-center-x="-7.6290713e-006"
-         transform="scale(-1)"
-         r="37.284096"
-         cy="-202.0565"
-         cx="272.26242"
-         id="circle4654"
-         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
-         inkscape:transform-center-y="75.141701"
-         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
-         inkscape:export-xdpi="75"
-         inkscape:export-ydpi="75" />
-      <circle
-         inkscape:transform-center-y="37.570844"
-         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
-         id="circle4656"
-         cx="246.04265"
-         cy="97.187073"
-         r="37.284096"
-         transform="rotate(120)"
-         inkscape:transform-center-x="-65.074629"
-         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
-         inkscape:export-xdpi="75"
-         inkscape:export-ydpi="75" />
-      <circle
-         inkscape:transform-center-x="-65.074619"
-         transform="rotate(60)"
-         r="37.284096"
-         cy="224.10187"
-         cx="-26.219784"
-         id="circle4658"
-         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
-         inkscape:transform-center-y="-37.57086"
-         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
-         inkscape:export-xdpi="75"
-         inkscape:export-ydpi="75" />
-      <circle
-         style="opacity:1;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-         id="circle4743"
-         cx="-272.28305"
-         cy="126.91473"
-         r="2.2841296"
-         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
-         inkscape:export-xdpi="75"
-         inkscape:export-ydpi="75" />
-    </g>
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\indicator.png"
+       r="2.2841296"
+       cy="547.59698"
+       cx="122.20678"
+       id="circle4743"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+    <rect
+       y="411.29617"
+       x="119.55523"
+       height="136.55586"
+       width="2.9066482"
+       id="rect832"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:5.34553719;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\indicator.png"
+       inkscape:export-xdpi="39.32"
+       inkscape:export-ydpi="39.32" />
+    <path
+       transform="matrix(0.49921405,0,0,0.52293986,257.23373,427.19473)"
+       inkscape:transform-center-y="3.8540003"
+       inkscape:transform-center-x="-6.6068345e-006"
+       d="m -298.40936,1.5726896 25.53,-5e-7 25.52999,-6e-7 -12.765,22.1096255 -12.76499,22.109625 -12.765,-22.109625 z"
+       inkscape:randomized="0"
+       inkscape:rounded="0"
+       inkscape:flatsided="false"
+       sodipodi:arg2="-1.5707963"
+       sodipodi:arg1="-2.6179939"
+       sodipodi:r2="14.73975"
+       sodipodi:r1="29.4795"
+       sodipodi:cy="16.312439"
+       sodipodi:cx="-272.87936"
+       sodipodi:sides="3"
+       id="path903"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       sodipodi:type="star"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\indicator.png"
+       inkscape:export-xdpi="39.32"
+       inkscape:export-ydpi="39.32" />
+    <path
+       sodipodi:type="star"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path905"
+       sodipodi:sides="3"
+       sodipodi:cx="-272.87936"
+       sodipodi:cy="16.312439"
+       sodipodi:r1="29.4795"
+       sodipodi:r2="14.73975"
+       sodipodi:arg1="-2.6179939"
+       sodipodi:arg2="-1.5707963"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m -298.40936,1.5726896 25.53,-5e-7 25.52999,-6e-7 -12.765,22.1096255 -12.76499,22.109625 -12.765,-22.109625 z"
+       inkscape:transform-center-x="-6.6068345e-006"
+       inkscape:transform-center-y="-3.8539999"
+       transform="matrix(0.49921405,0,0,-0.52293986,257.76827,519.58251)"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\indicator.png"
+       inkscape:export-xdpi="39.32"
+       inkscape:export-ydpi="39.32" />
+    <rect
+       transform="matrix(-0.00699954,0.9999755,-0.99821552,-0.05971417,0,0)"
+       y="1.2065246"
+       x="-133.64998"
+       height="13.197426"
+       width="480.48291"
+       id="rect953"
+       style="opacity:1;fill:#7b3b24;fill-opacity:1;fill-rule:nonzero;stroke:#361002;stroke-width:4.61165428;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1197)"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <rect
+       style="opacity:1;fill:#7b3b24;fill-opacity:1;fill-rule:nonzero;stroke:#361002;stroke-width:5.8079443;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1193)"
+       id="rect947"
+       width="535.13721"
+       height="18.794611"
+       x="-513.56073"
+       y="-109.62279"
+       transform="matrix(0.99999531,-0.00306155,0.01488507,0.99988921,0,0)"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <rect
+       y="317.08618"
+       x="-544.33539"
+       height="12.438501"
+       width="542.59186"
+       id="rect949"
+       style="opacity:1;fill:#7b3b24;fill-opacity:1;fill-rule:nonzero;stroke:#361002;stroke-width:4.75766516;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1189)"
+       transform="matrix(0.99998578,-0.00533306,0.06096623,0.99813983,0,0)"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <rect
+       style="opacity:1;fill:#aa4400;fill-opacity:1;fill-rule:nonzero;stroke:#7b3b24;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1185)"
+       id="rect961"
+       width="5.3453903"
+       height="223.54875"
+       x="-423.8895"
+       y="-434.36087"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <rect
+       style="opacity:1;fill:#361002;fill-opacity:1;fill-rule:nonzero;stroke:#7b3b24;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1181)"
+       id="rect963"
+       width="15.989674"
+       height="41.429707"
+       x="-429.32056"
+       y="-214.42169"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <rect
+       y="-435.84006"
+       x="-77.937981"
+       height="223.54875"
+       width="5.3453903"
+       id="rect974"
+       style="opacity:1;fill:#aa4400;fill-opacity:1;fill-rule:nonzero;stroke:#7b3b24;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1177)"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <rect
+       y="-226.36388"
+       x="-83.369041"
+       height="51.892536"
+       width="15.989674"
+       id="rect976"
+       style="opacity:1;fill:#361002;fill-opacity:1;fill-rule:nonzero;stroke:#7b3b24;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1173)"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <rect
+       style="opacity:1;fill:#fdd41a;fill-opacity:1;fill-rule:nonzero;stroke:#7b3b24;stroke-width:6.06335735;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1169)"
+       id="rect981"
+       width="1.3398293"
+       height="8.6295519"
+       x="-115.04578"
+       y="-85.588867"
+       transform="matrix(0.84589745,0.53334557,-0.35067122,0.93649864,0,0)"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
+    <rect
+       transform="matrix(0.71039698,0.70380121,-0.50784147,0.86145054,0,0)"
+       y="198.89655"
+       x="-439.30548"
+       height="9.3813438"
+       width="1.0153322"
+       id="rect983"
+       style="opacity:1;fill:#fdd41a;fill-opacity:1;fill-rule:nonzero;stroke:#7b3b24;stroke-width:6.09398935;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter1165)"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\sign.png"
+       inkscape:export-xdpi="20.092892"
+       inkscape:export-ydpi="20.092892" />
   </g>
 </svg>

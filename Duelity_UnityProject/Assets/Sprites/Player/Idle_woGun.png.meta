@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 27b8e8256aaac5641a3acbe76b908f36
+guid: a3ca4c5be6aa02940acda0bc9e1cdc01
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5064401156898091283
-    second: bird_0
+      213: 211368658317467258
+    second: Idle_woGun_0
   - first:
-      213: -7518524041257459519
-    second: bird_1
+      213: 779655415152344139
+    second: Idle_woGun_1
   - first:
-      213: -6583155732020471796
-    second: bird_2
+      213: 6742132453652980739
+    second: Idle_woGun_2
+  - first:
+      213: 6569181458648022355
+    second: Idle_woGun_3
+  - first:
+      213: -7652342031088655905
+    second: Idle_woGun_4
+  - first:
+      213: -3351504915693321706
+    second: Idle_woGun_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -55,7 +64,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -124,13 +133,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bird_0
+      name: Idle_woGun_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 44
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dee030beaf1a7b9b0800000000000000
-      internalID: -5064401156898091283
+      spriteID: a7ed9a3ccaeeee200800000000000000
+      internalID: 211368658317467258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bird_1
+      name: Idle_woGun_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 44
         y: 0
-        width: 16
-        height: 16
+        width: 44
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c06d952836d8a790800000000000000
-      internalID: -7518524041257459519
+      spriteID: b4c7d532874e1da00800000000000000
+      internalID: 779655415152344139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bird_2
+      name: Idle_woGun_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 88
         y: 0
-        width: 16
-        height: 16
+        width: 44
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,8 +189,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c08d7d3adbee3a4a0800000000000000
-      internalID: -6583155732020471796
+      spriteID: 3046e98cebdd09d50800000000000000
+      internalID: 6742132453652980739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_woGun_3
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35d3ccb4bbb6a2b50800000000000000
+      internalID: 6569181458648022355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_woGun_4
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd16b21777b6dc590800000000000000
+      internalID: -7652342031088655905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_woGun_5
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 0
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 612cf1549001d71d0800000000000000
+      internalID: -3351504915693321706
       vertices: []
       indices: 
       edges: []
