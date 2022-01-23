@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a998a9d4003f3c4da44cc6be32289d0, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  _keyCodeLeftPlayer: 32
-  _keyCodeRightPlayer: 13
+  _keyCodeLeftPlayer: 276
+  _keyCodeRightPlayer: 275
   _dualStartTimeRange:
     _min: 5
     _max: 10

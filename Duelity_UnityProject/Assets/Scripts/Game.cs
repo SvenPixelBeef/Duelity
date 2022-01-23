@@ -23,8 +23,13 @@ namespace Duelity
 
         [SerializeField] SpriteRenderer _fadeOutSpriteRenderer;
 
+        [SerializeField] SpriteRenderer _leftArrow;
+        [SerializeField] SpriteRenderer _rightArrow;
+
         [SerializeField] TextMeshPro _titleText;
         [SerializeField] TextMeshPro _anyKeyPromptText;
+        [SerializeField] TextMeshPro _howToPlayText;
+        [SerializeField] TextMeshPro _credits;
 
         [SerializeField] ParticleSystem _birdsPS;
 
@@ -64,6 +69,10 @@ namespace Duelity
 
             _anyKeyPromptText.enabled = false;
             _titleText.enabled = false;
+            _howToPlayText.enabled = false;
+            _leftArrow.enabled = false;
+            _rightArrow.enabled = false;
+            _credits.enabled = false;
 #if !UNITY_EDITOR
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Confined;
@@ -82,12 +91,20 @@ namespace Duelity
             _anyKeyPromptText.enabled = true;
             _anyKeyPromptText.GetComponent<Animation>().Play();
 
+            FadeInText(_howToPlayText, Settings.FadeInDuration / 2, null);
+            FadeInSpriteRenderer(_leftArrow, Settings.FadeInDuration / 2, null);
+            FadeInSpriteRenderer(_rightArrow, Settings.FadeInDuration / 2, null);
+            yield return new WaitForSecondsRealtime((Settings.FadeInDuration / 2) + 0.1f);
+
             yield return new WaitUntil(() => Input.anyKeyDown);
             // TODO: Play feedback sound here
 
             _anyKeyPromptText.GetComponent<Animation>().Stop();
             FadeOutText(_anyKeyPromptText, 2f, null);
             FadeOutText(_titleText, 2f, null);
+            FadeOutText(_howToPlayText, 2f, null);
+            FadeOutSpriteRenderer(_leftArrow, 2f, null);
+            FadeOutSpriteRenderer(_rightArrow, 2f, null);
             yield return new WaitForSecondsRealtime(Settings.FadeInDuration);
 
             float musicFadeDuration = 1.5f;
@@ -170,6 +187,8 @@ namespace Duelity
                     yield return new WaitForSecondsRealtime(3.5f);
                     FadeInText(_titleText, 2f, null);
                     yield return new WaitForSecondsRealtime(2f);
+                    FadeInText(_credits, 1f, null);
+                    yield return new WaitForSecondsRealtime(1f);
 
                     yield return new WaitUntil(() => Input.anyKeyDown);
                     Reload();
@@ -204,6 +223,8 @@ namespace Duelity
                 yield return new WaitForSecondsRealtime(3.5f);
                 FadeInText(_titleText, 2f, null);
                 yield return new WaitForSecondsRealtime(2f);
+                FadeInText(_credits, 1f, null);
+                yield return new WaitForSecondsRealtime(1f);
 
                 yield return new WaitUntil(() => Input.anyKeyDown);
                 Reload();
@@ -330,6 +351,12 @@ namespace Duelity
 
             yield return new WaitForSecondsRealtime(3.5f);
             FadeInText(_titleText, 2f, null);
+            yield return new WaitForSecondsRealtime(2f);
+            FadeInText(_credits, 1f, null);
+            yield return new WaitForSecondsRealtime(1f);
+
+            yield return new WaitUntil(() => Input.anyKeyDown);
+            Reload();
         }
 
         [Conditional(Log.EDITOR_DEFINE)]

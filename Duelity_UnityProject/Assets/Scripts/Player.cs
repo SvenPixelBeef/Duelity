@@ -34,6 +34,7 @@ namespace Duelity
         const int ANIM_DIE = 3;
         const int ANIM_WALK = 4;
         const int ANIM_WALK_WITHOUT_GUN = 5;
+        const int ANIM_IDLE_WITHOUT_GUN = 6;
 
         void Awake()
         {
@@ -93,25 +94,16 @@ namespace Duelity
         void OnPlayerReloadedAll(Player player)
         {
             _duelMiniGame = null;
-            if (player == this)
-            {
-                Log.Info($"{_playerType} won!");
-            }
         }
 
         void OnPlayerFailedReload(Player player)
         {
             _duelMiniGame = null;
-            if (player == this)
-            {
-                Log.Info($"{_playerType} failed to reload!");
-            }
         }
 
         void OnSecretEndingTriggered(Events.NoEventArgs _)
         {
             _duelMiniGame = null;
-            //_duelMiniGameDisplay.gameObject.SetActive(false);
         }
 
         public void Shoot()
@@ -130,9 +122,6 @@ namespace Duelity
         public void Die()
         {
             _animator.SetInteger(parameterIdState, ANIM_DIE);
-
-            // TODO:Sound effect for dying goes here
-
         }
 
         bool _fumbled;
@@ -143,6 +132,13 @@ namespace Duelity
         {
             _animator.SetInteger(parameterIdState, ANIM_FUMBLE);
             _fumbled = true;
+            StartCoroutine(CheckAnimRoutine());
+            IEnumerator CheckAnimRoutine()
+            {
+                yield return null;
+                yield return new WaitUntil(() => _animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+                _animator.SetInteger(parameterIdState, ANIM_IDLE_WITHOUT_GUN);
+            }
         }
 
         public void StandDown()
