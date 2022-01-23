@@ -65,5 +65,8 @@ namespace Duelity
 
         [SerializeField, Expandable] Sound _ambienceMusic;
         public Sound AmbienceMusic => _ambienceMusic;
+
+        [SerializeField, Expandable] Sound _ambienceMusic2;
+        public Sound AmbienceMusic2 => _ambienceMusic2;
     }
 }

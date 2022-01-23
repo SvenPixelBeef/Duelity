@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 83257405}
   - component: {fileID: 83257407}
   - component: {fileID: 83257406}
+  - component: {fileID: 83257408}
   m_Layer: 0
   m_Name: AnyKeyPromptText
   m_TagString: Untagged
@@ -304,6 +305,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!111 &83257408
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83257404}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 70612f5739ac10d4f8c5860151f5f52f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 70612f5739ac10d4f8c5860151f5f52f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &139862261
 PrefabInstance:
   m_ObjectHideFlags: 0
