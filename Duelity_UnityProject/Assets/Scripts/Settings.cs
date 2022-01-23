@@ -90,5 +90,8 @@ namespace Duelity
 
         [SerializeField, Expandable] CameraShake _cameraShakeReloadFail;
         public CameraShake CameraShakeReloadFail => _cameraShakeReloadFail;
+
+        [SerializeField, Expandable] CameraShake _cameraShakeDuelStart;
+        public CameraShake CameraShakeDuelStart => _cameraShakeDuelStart;
     }
 }

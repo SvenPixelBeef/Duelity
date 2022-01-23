@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb13042fb87627f479e6874c78f7cfdf, type: 3}
-  m_Name: CameraShake_Shot
+  m_Name: Shake_ReloadFail
   m_EditorClassIdentifier: 
-  duration: 0.2
+  duration: 1
   animationCurveX:
     serializedVersion: 2
     m_Curve:
@@ -61,8 +61,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  intensityX: 0.03
-  frequencyX: 15
+  intensityX: 0.02
+  frequencyX: 33
   randomizeIntensityX: 0
   randomizedXCurve:
     m_Mode: 0
@@ -81,9 +81,9 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_ConstantMin: 0
     m_ConstantMax: 0
-  minIntensityX: 0.03
-  intensityY: 0.03
-  frequencyY: 15
+  minIntensityX: 0
+  intensityY: 0.02
+  frequencyY: 33
   randomizeIntensityY: 0
   randomizedYCurve:
     m_Mode: 0

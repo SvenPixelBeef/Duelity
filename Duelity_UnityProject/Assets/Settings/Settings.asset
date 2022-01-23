@@ -22,7 +22,7 @@ MonoBehaviour:
   _requiredDurationSecretEnding: 15
   _walkAwaySpeed: 1
   _birdReactionDelay: 0.33
-  _failColor: {r: 0, g: 0, b: 0, a: 0}
+  _failColor: {r: 0.90588236, g: 0.29803923, b: 0.23529412, a: 1}
   _fadeInDuration: 0
   _fadeInCurve:
     serializedVersion: 2
@@ -85,3 +85,4 @@ MonoBehaviour:
   _cameraShakeShot: {fileID: 11400000, guid: e04bc63a5dbc07243be3219deb023441, type: 2}
   _cameraShakeReloadSuccess: {fileID: 11400000, guid: 5381569341f3a6840ac9d28b22023985, type: 2}
   _cameraShakeReloadFail: {fileID: 11400000, guid: eb349efba259dae43ae5ba443eef8cf4, type: 2}
+  _cameraShakeDuelStart: {fileID: 11400000, guid: 215e1c26e1657ba449d6aab469accbae, type: 2}

@@ -28,7 +28,7 @@ namespace Duelity
 
         [SerializeField] ParticleSystem _birdsPS;
 
-        [SerializeField] CameraShaker _cameraShaker;
+        [SerializeField] Shaker _cameraShaker;
 
 
         Color FadeOutColor => Color.black;
@@ -44,7 +44,7 @@ namespace Duelity
 
         public static Game Instance { get; private set; }
 
-        public static CameraShaker CameraShaker => Instance._cameraShaker;
+        public static Shaker CameraShaker => Instance._cameraShaker;
         public static Settings Settings => Instance._settings;
         public static AudioManager Audio => _audio ??= new AudioManager(10);
 
@@ -313,17 +313,17 @@ namespace Duelity
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                _cameraShaker.ShakeCamera(Settings.CameraShakeShot);
+                _cameraShaker.ShakeObject(Camera.main.transform,Settings.CameraShakeShot);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                _cameraShaker.ShakeCamera(Settings.CameraShakeReloadSuccess);
+                _cameraShaker.ShakeObject(Camera.main.transform, Settings.CameraShakeReloadSuccess);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                _cameraShaker.ShakeCamera(Settings.CameraShakeReloadFail);
+                _cameraShaker.ShakeObject(Camera.main.transform, Settings.CameraShakeReloadFail);
             }
         }
     }

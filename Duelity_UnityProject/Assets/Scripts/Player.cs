@@ -66,6 +66,7 @@ namespace Duelity
                 {
                     _duelMiniGame.RemoveRange(hitRange, out int removedIndex);
                     _duelMiniGameDisplay.UpdateSingleSlot(removedIndex);
+                    Game.CameraShaker.ShakeObject(_duelMiniGameDisplay.transform, Game.Settings.CameraShakeReloadSuccess);
                     if (_duelMiniGame.TargetRangeIndices.Count == 0)
                     {
                         Events.PlayerReloadedAll.RaiseEvent(this);
@@ -73,12 +74,11 @@ namespace Duelity
                     else
                     {
                         Game.Settings.ReloadSounds.RandomElement().Play();
-                        Game.CameraShaker.ShakeCamera(Game.Settings.CameraShakeReloadSuccess);
                     }
                 }
                 else
                 {
-                    Game.CameraShaker.ShakeCamera(Game.Settings.CameraShakeReloadFail);
+                    Game.CameraShaker.ShakeObject(_duelMiniGameDisplay.transform, Game.Settings.CameraShakeReloadFail);
                     int indexOfMissedElement = _duelMiniGame.GetIndexForValue(_duelMiniGame.Value);
                     _duelMiniGameDisplay.UpdateSingleSlot(indexOfMissedElement, false);
                     Events.PlayerFailedReload.RaiseEvent(this);
@@ -122,7 +122,7 @@ namespace Duelity
             _animator.SetInteger(parameterIdState, ANIM_SHOOT);
             _shootingParticleSystem.Play();
             Game.Settings.GunShotSound.Play();
-            Game.CameraShaker.ShakeCamera(Game.Settings.CameraShakeShot);
+            Game.CameraShaker.ShakeObject(Camera.main.transform, Game.Settings.CameraShakeShot);
             this.WaitAndDo(new WaitForSecondsRealtime(Game.Settings.BirdReactionDelay), () =>
             {
                 Game.Settings.CrowsSound.Play();
