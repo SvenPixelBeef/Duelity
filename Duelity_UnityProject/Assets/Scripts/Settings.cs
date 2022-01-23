@@ -57,6 +57,9 @@ namespace Duelity
         [SerializeField, Expandable] List<Sound> _reloadSounds;
         public IReadOnlyCollection<Sound> ReloadSounds => _reloadSounds;
 
+        [SerializeField, Expandable] Sound _crowsSound;
+        public Sound CrowsSound => _crowsSound;
+
         [Header("Music")]
         [Space]
 

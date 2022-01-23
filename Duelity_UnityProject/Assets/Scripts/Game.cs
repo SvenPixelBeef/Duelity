@@ -13,8 +13,6 @@ namespace Duelity
     {
         [SerializeField, Expandable] Settings _settings;
 
-
-
         [Header("Scene References")]
 
         [SerializeField] Player _leftPlayer;
@@ -57,6 +55,10 @@ namespace Duelity
 
             _anyKeyPromptText.enabled = false;
             _titleText.enabled = false;
+#if !UNITY_EDITOR
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Confined;
+#endif
         }
 
         IEnumerator Start()
@@ -206,7 +208,7 @@ namespace Duelity
                 = StartCoroutine(ColorLerpRoutine(startingColor, targetColor, duration, (color) => _fadeOutSpriteRenderer.color = color, curve, callback));
         }
 
-        void FadeOutText(TextMeshPro text, float duration, AnimationCurve curve, Action doneCallback = null)
+        public void FadeOutText(TextMeshPro text, float duration, AnimationCurve curve, Action doneCallback = null)
         {
             text.enabled = true;
             var baseColor = text.color;
@@ -217,7 +219,7 @@ namespace Duelity
             StartCoroutine(ColorLerpRoutine(startingColor, targetColor, duration, (color) => text.color = color, curve, doneCallback));
         }
 
-        void FadeInText(TextMeshPro text, float duration, AnimationCurve curve, Action doneCallback = null)
+        public void FadeInText(TextMeshPro text, float duration, AnimationCurve curve, Action doneCallback = null)
         {
             text.enabled = true;
             var baseColor = text.color;
@@ -228,7 +230,29 @@ namespace Duelity
             StartCoroutine(ColorLerpRoutine(startingColor, targetColor, duration, (color) => text.color = color, curve, doneCallback));
         }
 
-        IEnumerator ColorLerpRoutine(Color startingColor,
+        public void FadeInSpriteRenderer(SpriteRenderer spriteRenderer, float duration, AnimationCurve curve, Action doneCallback = null)
+        {
+            spriteRenderer.enabled = true;
+            var baseColor = spriteRenderer.color;
+            var startingColor = baseColor;
+            startingColor.a = 0f;
+            var targetColor = baseColor;
+            targetColor.a = 1f;
+            StartCoroutine(ColorLerpRoutine(startingColor, targetColor, duration, (color) => spriteRenderer.color = color, curve, doneCallback));
+        }
+
+        public void FadeOutSpriteRenderer(SpriteRenderer spriteRenderer, float duration, AnimationCurve curve, Action doneCallback = null)
+        {
+            spriteRenderer.enabled = true;
+            var baseColor = spriteRenderer.color;
+            var startingColor = baseColor;
+            startingColor.a = 1f;
+            var targetColor = baseColor;
+            targetColor.a = 0f;
+            StartCoroutine(ColorLerpRoutine(startingColor, targetColor, duration, (color) => spriteRenderer.color = color, curve, doneCallback));
+        }
+
+        public IEnumerator ColorLerpRoutine(Color startingColor,
             Color targetColor,
             float duration,
             Action<Color> callback,
