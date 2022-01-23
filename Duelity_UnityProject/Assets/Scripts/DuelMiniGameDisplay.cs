@@ -12,7 +12,7 @@ namespace Duelity
 
         [SerializeField] Transform _maskParent;
 
-        List<SpriteMask> _masks;
+        List<SpriteRenderer> _spriteRenderers;
 
 
         DuelMiniGame _duelMiniGame;
@@ -20,10 +20,10 @@ namespace Duelity
         void Awake()
         {
             _mainSpriteRenderer.gameObject.SetActive(false);
-            _masks = new List<SpriteMask>(_maskParent.childCount);
+            _spriteRenderers = new List<SpriteRenderer>(_maskParent.childCount);
             for (int i = 0; i < _maskParent.childCount; i++)
             {
-                _masks.Add(_maskParent.GetChild(i).GetComponent<SpriteMask>());
+                _spriteRenderers.Add(_maskParent.GetChild(i).GetComponent<SpriteRenderer>());
             }
         }
 
@@ -75,16 +75,26 @@ namespace Duelity
             _indicator.rotation = Quaternion.Euler(0, 0, value - 90f);
         }
 
+        public void UpdateSingleSlot(int index)
+        {
+            SpriteRenderer toUpdate = _spriteRenderers[index];
+            Game.Instance.FadeInSpriteRenderer(toUpdate, .66f, AnimationCurve.EaseInOut(0f, 0f, 1f, 1f));
+        }
+
         public void UpdateReloadSlots()
         {
-            foreach (var mask in _masks)
+            foreach (var renderer in _spriteRenderers)
             {
-                mask.enabled = true;
+                var color = renderer.color;
+                color.a = 1f;
+                renderer.color = color;
             }
 
             foreach (var index in _duelMiniGame.TargetRangeIndices)
             {
-                _masks[index].enabled = false;
+                var color = _spriteRenderers[index].color;
+                color.a = 0f;
+                _spriteRenderers[index].color = color;
             }
         }
     }

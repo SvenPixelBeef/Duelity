@@ -60,10 +60,10 @@ namespace Duelity
             return IsInsideValidRange(Value, out floatRange);
         }
 
-        public bool RemoveRange(FloatRange floatRange)
+        public bool RemoveRange(FloatRange floatRange, out int indexOfRemoved)
         {
-            int index = _floatRanges.IndexOf(floatRange);
-            bool removed = _targetRangeIndices.Remove(index);
+            indexOfRemoved = _floatRanges.IndexOf(floatRange);
+            bool removed = _targetRangeIndices.Remove(indexOfRemoved);
 
             float chance = Config.DirectionChangeChance.GetRandomValueInsideRange();
             if (UnityEngine.Random.value <= chance)

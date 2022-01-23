@@ -31,6 +31,9 @@ namespace Duelity
         public float WalkAwaySpeed => _walkAwaySpeed;
 
 
+        [SerializeField, Space] float _birdReactionDelay = .33f;
+        public float BirdReactionDelay => _birdReactionDelay;
+
         [Header("Fading in and out")]
         [Space]
 
@@ -56,6 +59,9 @@ namespace Duelity
 
         [SerializeField, Expandable] List<Sound> _reloadSounds;
         public IReadOnlyCollection<Sound> ReloadSounds => _reloadSounds;
+
+        [SerializeField, Expandable] Sound _crowsSound;
+        public Sound CrowsSound => _crowsSound;
 
         [Header("Music")]
         [Space]

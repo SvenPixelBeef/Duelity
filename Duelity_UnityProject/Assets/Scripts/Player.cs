@@ -40,7 +40,7 @@ namespace Duelity
             this.ListenTo(Events.DuelStarted, OnDuelStarted);
             this.ListenTo(Events.PlayerReloadedAll, OnPlayerReloadedAll);
             this.ListenTo(Events.PlayerFailedReload, OnPlayerFailedReload);
-            this.ListenTo(Events.SecretEndingTriggered, OnPlayerFailedReload);
+            this.ListenTo(Events.SecretEndingTriggered, OnSecretEndingTriggered);
             _animator.SetFloat(parameterIdStateOffset, UnityEngine.Random.value);
         }
 
@@ -64,8 +64,8 @@ namespace Duelity
                 bool hit = _duelMiniGame.IsInsideValidRange(out FloatRange hitRange);
                 if (hit)
                 {
-                    _duelMiniGame.RemoveRange(hitRange);
-                    _duelMiniGameDisplay.UpdateReloadSlots();
+                    _duelMiniGame.RemoveRange(hitRange, out int removedIndex);
+                    _duelMiniGameDisplay.UpdateSingleSlot(removedIndex);
                     if (_duelMiniGame.TargetRangeIndices.Count == 0)
                     {
                         Events.PlayerReloadedAll.RaiseEvent(this);
@@ -93,7 +93,7 @@ namespace Duelity
         void OnPlayerReloadedAll(Player player)
         {
             _duelMiniGame = null;
-            _duelMiniGameDisplay.gameObject.SetActive(false);
+            //_duelMiniGameDisplay.gameObject.SetActive(false);
             if (player == this)
             {
                 Log.Info($"{_playerType} won!");
@@ -103,17 +103,17 @@ namespace Duelity
         void OnPlayerFailedReload(Player player)
         {
             _duelMiniGame = null;
-            _duelMiniGameDisplay.gameObject.SetActive(false);
+            // _duelMiniGameDisplay.gameObject.SetActive(false);
             if (player == this)
             {
                 Log.Info($"{_playerType} failed to reload!");
             }
         }
 
-        void OnPlayerFailedReload(Events.NoEventArgs _)
+        void OnSecretEndingTriggered(Events.NoEventArgs _)
         {
             _duelMiniGame = null;
-            _duelMiniGameDisplay.gameObject.SetActive(false);
+            //_duelMiniGameDisplay.gameObject.SetActive(false);
         }
 
         public void Shoot()
@@ -121,6 +121,11 @@ namespace Duelity
             _animator.SetInteger(parameterIdState, ANIM_SHOOT);
             _shootingParticleSystem.Play();
             Game.Settings.GunShotSound.Play();
+            this.WaitAndDo(new WaitForSecondsRealtime(Game.Settings.BirdReactionDelay), () =>
+            {
+                Game.Settings.CrowsSound.Play();
+                Game.BirdsPS.Play();
+            });
         }
 
         public void Die()

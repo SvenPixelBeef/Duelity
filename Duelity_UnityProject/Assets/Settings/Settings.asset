@@ -21,7 +21,7 @@ MonoBehaviour:
   _duelMiniGameConfig: {fileID: 11400000, guid: a07aaedfb4bb0f343b4c8176c5fe6cbb, type: 2}
   _requiredDurationSecretEnding: 15
   _walkAwaySpeed: 1
-  _fadeInDuration: 1
+  _fadeInDuration: 0
   _fadeInCurve:
     serializedVersion: 2
     m_Curve:
@@ -46,7 +46,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _fadeOutDuration: 2
+  _fadeOutDuration: 0
   _fadeOutCurve:
     serializedVersion: 2
     m_Curve:
@@ -76,6 +76,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 897364fdb02c3df4295c7347c2b373bc, type: 2}
   - {fileID: 11400000, guid: 65c40ead825bb9f41bf6330d7ea9c77d, type: 2}
   - {fileID: 11400000, guid: c0ed1a210e6b4034a89351f38df02605, type: 2}
+  _crowsSound: {fileID: 11400000, guid: 0a3fae956b792744e9026e5cd74d864f, type: 2}
   _titleScreenMusic: {fileID: 11400000, guid: a7cbe47a1b35c584f97a4e960d6f3aa3, type: 2}
   _ambienceMusic: {fileID: 11400000, guid: d565131ad37498146ae2f31d9cac6f53, type: 2}
   _ambienceMusic2: {fileID: 11400000, guid: fac810481c9e19c499296c779900f402, type: 2}
