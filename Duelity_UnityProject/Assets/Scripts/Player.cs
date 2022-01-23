@@ -136,7 +136,7 @@ namespace Duelity
 
         public void WalkAway()
         {
-            _spriteRenderer.flipX = true;
+            _spriteRenderer.flipX = !_spriteRenderer.flipX;
             _animator.SetInteger(parameterId, ANIM_WALK);
             StartCoroutine(WalkAwayRoutine());
             IEnumerator WalkAwayRoutine()

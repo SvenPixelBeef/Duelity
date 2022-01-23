@@ -20,7 +20,12 @@ namespace Duelity
             _audioSourceHolder = new GameObject("AudioSources");
             GameObject.DontDestroyOnLoad(_audioSourceHolder);
             for (int i = 0; i < maxSources; i++)
-                _pooledSources.Add(_audioSourceHolder.AddComponent<AudioSource>());
+            {
+                var source = _audioSourceHolder.AddComponent<AudioSource>();
+                source.playOnAwake = false;
+                _pooledSources.Add(source);
+
+            }
         }
 
         #region OneShot

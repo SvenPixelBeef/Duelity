@@ -24,17 +24,29 @@ namespace Duelity
         public DuelMiniGameConfig DuelMiniGameConfig => _duelMiniGameConfig;
 
 
-        [SerializeField, Space] float _fadeInDuration = 0.5f;
-        public float FadeInDuration => _fadeInDuration;
-
-        [SerializeField] float _fadeOutDuration = 0.5f;
-        public float FadeOutDuration => _fadeOutDuration;
-
         [SerializeField, Space] float _requiredDurationSecretEnding = 30f;
         public float RequiredDurationSecretEnding => _requiredDurationSecretEnding;
 
         [SerializeField, Space] float _walkAwaySpeed = 3f;
         public float WalkAwaySpeed => _walkAwaySpeed;
+
+
+        [Header("Fading in and out")]
+        [Space]
+
+        [SerializeField, Space] float _fadeInDuration = 0.5f;
+        public float FadeInDuration => _fadeInDuration;
+
+        [SerializeField] AnimationCurve _fadeInCurve;
+        public AnimationCurve FadeInCurve => _fadeInCurve;
+
+        [SerializeField, Space] float _fadeOutDuration = 0.5f;
+        public float FadeOutDuration => _fadeOutDuration;
+
+        [SerializeField] AnimationCurve _fadeOutCurve;
+        public AnimationCurve FadeOutCurve => _fadeOutCurve;
+
+
 
         [Header("Sounds")]
         [Space]

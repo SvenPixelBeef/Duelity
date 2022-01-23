@@ -15,14 +15,62 @@ MonoBehaviour:
   _keyCodeLeftPlayer: 32
   _keyCodeRightPlayer: 13
   _dualStartTimeRange:
-    _min: 5
-    _max: 0
-  _dualTimeScale: 0.1
+    _min: 1
+    _max: 1
+  _dualTimeScale: 1
   _duelMiniGameConfig: {fileID: 11400000, guid: a07aaedfb4bb0f343b4c8176c5fe6cbb, type: 2}
+  _requiredDurationSecretEnding: 10
+  _walkAwaySpeed: 1
   _fadeInDuration: 1
+  _fadeInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _fadeOutDuration: 1
-  _requiredDurationSecretEnding: 30
-  _walkAwaySpeed: 2
+  _fadeOutCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gunShotSound: {fileID: 11400000, guid: 7a9ef66fc85258444807a2d059cf5cf3, type: 2}
   _reloadSounds:
   - {fileID: 11400000, guid: 897364fdb02c3df4295c7347c2b373bc, type: 2}
