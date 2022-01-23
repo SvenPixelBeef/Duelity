@@ -6,6 +6,12 @@ namespace Duelity
 {
     public class DuelMiniGameDisplay : MonoBehaviour
     {
+        [SerializeField] Animation _animation;
+
+        [SerializeField] string _animationEnterName;
+
+        [SerializeField] string _animationExitName;
+
         [SerializeField] SpriteRenderer _mainSpriteRenderer;
 
         [SerializeField] Transform _indicator;
@@ -114,6 +120,16 @@ namespace Duelity
                 color.a = 0f;
                 _spriteRenderers[index].color = color;
             }
+        }
+
+        public void PlayEnterAnimation()
+        {
+            _animation.Play(_animationEnterName);
+        }
+
+        public void PlayExitAnimation()
+        {
+            _animation.Play(_animationExitName);
         }
     }
 }

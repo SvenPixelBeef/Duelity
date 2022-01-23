@@ -16,8 +16,10 @@ namespace Duelity
         [Header("Scene References")]
 
         [SerializeField] Player _leftPlayer;
-
         [SerializeField] Player _rightPlayer;
+
+        [SerializeField] DuelMiniGameDisplay _leftPlayerDuelMiniGameDisplay;
+        [SerializeField] DuelMiniGameDisplay _rightPlayerDuelMiniGameDisplay;
 
         [SerializeField] SpriteRenderer _fadeOutSpriteRenderer;
 
@@ -99,6 +101,10 @@ namespace Duelity
             yield return new WaitForSecondsRealtime(duelTriggerTime);
 
             Events.DuelStarted.RaiseEvent(Events.NoArgs);
+            _leftPlayerDuelMiniGameDisplay.PlayEnterAnimation();
+            _rightPlayerDuelMiniGameDisplay.PlayEnterAnimation();
+
+
             // TODO: Play more/other sounds/music here?
 
 
@@ -110,6 +116,9 @@ namespace Duelity
                 _endingCoroutine = StartCoroutine(SecretEndingRoutine());
                 IEnumerator SecretEndingRoutine()
                 {
+                    _leftPlayerDuelMiniGameDisplay.PlayExitAnimation();
+                    _rightPlayerDuelMiniGameDisplay.PlayExitAnimation();
+
                     Player firstToStandDown = UnityEngine.Random.value >= .5f ? _leftPlayer : _rightPlayer;
                     Player secondToStandDown = firstToStandDown == _leftPlayer ? _rightPlayer : _leftPlayer;
                     firstToStandDown.StandDown();
@@ -149,6 +158,8 @@ namespace Duelity
             _endingCoroutine = StartCoroutine(PlayerFailedEndingRoutine());
             IEnumerator PlayerFailedEndingRoutine()
             {
+                _leftPlayerDuelMiniGameDisplay.PlayExitAnimation();
+                _rightPlayerDuelMiniGameDisplay.PlayExitAnimation();
                 _anyEndingWasTriggered = true;
                 // TODO: implement this ending
 
@@ -167,6 +178,8 @@ namespace Duelity
             _endingCoroutine = StartCoroutine(PlayerSuccededEndingRoutine());
             IEnumerator PlayerSuccededEndingRoutine()
             {
+                _leftPlayerDuelMiniGameDisplay.PlayExitAnimation();
+                _rightPlayerDuelMiniGameDisplay.PlayExitAnimation();
                 _anyEndingWasTriggered = true;
                 winningPlayer.Shoot();
                 yield return null;

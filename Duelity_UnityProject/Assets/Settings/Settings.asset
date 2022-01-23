@@ -19,8 +19,9 @@ MonoBehaviour:
     _max: 1
   _dualTimeScale: 1
   _duelMiniGameConfig: {fileID: 11400000, guid: a07aaedfb4bb0f343b4c8176c5fe6cbb, type: 2}
-  _requiredDurationSecretEnding: 15
+  _requiredDurationSecretEnding: 5
   _walkAwaySpeed: 1
+  _birdReactionDelay: 0.33
   _fadeInDuration: 0
   _fadeInCurve:
     serializedVersion: 2

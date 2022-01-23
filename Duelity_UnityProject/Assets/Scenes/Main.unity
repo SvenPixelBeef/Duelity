@@ -1998,6 +1998,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17d68da65e19a94980b5e362cdecbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animation: {fileID: 1238259088}
+  _animationEnterName: RightMinigameDisplayEnter
+  _animationExitName: RightMinigameDisplayExit
   _mainSpriteRenderer: {fileID: 1238259086}
   _indicator: {fileID: 1293102889}
   _maskParent: {fileID: 1694326232}
@@ -7365,6 +7368,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17d68da65e19a94980b5e362cdecbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animation: {fileID: 1765083465}
+  _animationEnterName: LeftMinigameDisplayEnter
+  _animationExitName: LeftMinigameDisplayExit
   _mainSpriteRenderer: {fileID: 1765083463}
   _indicator: {fileID: 1046514912}
   _maskParent: {fileID: 1303565408}
@@ -7589,6 +7595,8 @@ MonoBehaviour:
   _settings: {fileID: 11400000, guid: bec92ba837bc5e743a86c504dce159ca, type: 2}
   _leftPlayer: {fileID: 36478089}
   _rightPlayer: {fileID: 563733044}
+  _leftPlayerDuelMiniGameDisplay: {fileID: 1765083462}
+  _rightPlayerDuelMiniGameDisplay: {fileID: 1238259085}
   _fadeOutSpriteRenderer: {fileID: 299289031}
   _titleText: {fileID: 1067089275}
   _anyKeyPromptText: {fileID: 83257406}
