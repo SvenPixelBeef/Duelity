@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="Revolver.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-1324.5931"
+     inkscape:cy="661.53431"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g4707"
+     showgrid="false"
+     inkscape:snap-center="true"
+     inkscape:lockguides="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="opacity:1;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:12.44147873;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path4728"
+       cx="-272.26242"
+       cy="126.91479"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+       inkscape:export-xdpi="39.32"
+       inkscape:export-ydpi="39.32"
+       rx="155.27927"
+       ry="155.27925" />
+    <path
+       style="opacity:1;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4.69230747;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -272.24323,-9.829164 a 136.74355,136.74356 0 0 0 -42.84118,6.9946283 34.989689,34.989693 0 0 1 -4.05963,23.8766877 34.989689,34.989693 0 0 1 -47.79703,12.807398 34.989689,34.989693 0 0 1 -3.36175,-2.236649 136.74355,136.74356 0 0 0 -35.6807,67.544734 34.989689,34.989693 0 0 1 3.12074,1.282725 34.989689,34.989693 0 0 1 0.17652,0.0805 34.989689,34.989693 0 0 1 2.77691,1.48109 34.989689,34.989693 0 0 1 0.3802,0.22066 34.989689,34.989693 0 0 1 2.42288,1.62268 34.989689,34.989693 0 0 1 0.53394,0.38604 34.989689,34.989693 0 0 1 2.07225,1.71094 34.989689,34.989693 0 0 1 0.67119,0.59602 34.989689,34.989693 0 0 1 1.71242,1.72841 34.989689,34.989693 0 0 1 0.78417,0.85161 34.989689,34.989693 0 0 1 1.36761,1.68816 34.989689,34.989693 0 0 1 0.85159,1.13287 34.989689,34.989693 0 0 1 1.49369,2.27642 34.989689,34.989693 0 0 1 0.23763,0.3802 34.989689,34.989693 0 0 1 3.81666,9.73614 34.989689,34.989693 0 0 1 0.76916,10.42913 34.989689,34.989693 0 0 1 0,4.9e-4 34.989689,34.989693 0 0 1 -0.0499,0.39088 34.989689,34.989693 0 0 1 -2.29775,9.79966 34.989689,34.989693 0 0 1 -3.20367,6.2085 34.989689,34.989693 0 0 1 -4.37339,5.44807 34.989689,34.989693 0 0 1 -2.57274,2.36953 34.989689,34.989693 0 0 1 -4.89523,3.41414 34.989689,34.989693 0 0 1 -3.49803,1.74635 34.989689,34.989693 0 0 1 -0.005,0.003 136.74355,136.74356 0 0 0 40.605,64.65968 34.989689,34.989693 0 0 1 22.60609,-8.33263 34.989689,34.989693 0 0 1 34.98962,34.98963 34.989689,34.989693 0 0 1 -0.22599,3.8317 136.74355,136.74356 0 0 0 33.47362,4.36853 136.74355,136.74356 0 0 0 42.82858,-7.05961 34.989689,34.989693 0 0 1 4.07272,-23.81171 34.989689,34.989693 0 0 1 47.79654,-12.80691 34.989689,34.989693 0 0 1 3.25409,2.14984 136.74355,136.74356 0 0 0 35.75006,-67.4715 34.989689,34.989693 0 0 1 -18.56294,-15.42524 34.989689,34.989693 0 0 1 12.80691,-47.796539 34.989689,34.989693 0 0 1 3.50288,-1.748778 136.74355,136.74356 0 0 0 -40.605,-64.659688 34.989689,34.989693 0 0 1 -22.60608,8.332642 34.989689,34.989693 0 0 1 -34.98963,-34.9896256 34.989689,34.989693 0 0 1 0.22551,-3.8316974 136.74355,136.74356 0 0 0 -33.47364,-4.36855 z"
+       id="path4664"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+       inkscape:export-xdpi="39.32"
+       inkscape:export-ydpi="39.32" />
+    <g
+       id="g856"
+       transform="matrix(0.98951439,0,0,0.98951439,0.83323112,1.3629396)" />
+    <g
+       id="g4707"
+       inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+       inkscape:export-xdpi="39.32"
+       inkscape:export-ydpi="39.32">
+      <circle
+         cy="126.91473"
+         cx="-272.28305"
+         id="path815"
+         style="opacity:1;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         r="26.452566"
+         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+         inkscape:export-xdpi="75"
+         inkscape:export-ydpi="75" />
+      <circle
+         inkscape:transform-center-y="-75.141708"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+         id="circle4640"
+         cx="-272.26242"
+         cy="51.77309"
+         r="37.284096"
+         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine-bullet.png"
+         inkscape:export-xdpi="75"
+         inkscape:export-ydpi="75" />
+      <circle
+         inkscape:transform-center-x="65.074628"
+         transform="rotate(-60)"
+         r="37.284096"
+         cy="-247.47049"
+         cx="-246.04265"
+         id="circle4650"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+         inkscape:transform-center-y="-37.570856"
+         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+         inkscape:export-xdpi="75"
+         inkscape:export-ydpi="75" />
+      <circle
+         inkscape:transform-center-y="37.570858"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+         id="circle4652"
+         cx="26.219769"
+         cy="-374.38528"
+         r="37.284096"
+         transform="rotate(-120)"
+         inkscape:transform-center-x="65.074623"
+         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+         inkscape:export-xdpi="75"
+         inkscape:export-ydpi="75" />
+      <circle
+         inkscape:transform-center-x="-7.6290713e-006"
+         transform="scale(-1)"
+         r="37.284096"
+         cy="-202.0565"
+         cx="272.26242"
+         id="circle4654"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+         inkscape:transform-center-y="75.141701"
+         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+         inkscape:export-xdpi="75"
+         inkscape:export-ydpi="75" />
+      <circle
+         inkscape:transform-center-y="37.570844"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+         id="circle4656"
+         cx="246.04265"
+         cy="97.187073"
+         r="37.284096"
+         transform="rotate(120)"
+         inkscape:transform-center-x="-65.074629"
+         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+         inkscape:export-xdpi="75"
+         inkscape:export-ydpi="75" />
+      <circle
+         inkscape:transform-center-x="-65.074619"
+         transform="rotate(60)"
+         r="37.284096"
+         cy="224.10187"
+         cx="-26.219784"
+         id="circle4658"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+         inkscape:transform-center-y="-37.57086"
+         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+         inkscape:export-xdpi="75"
+         inkscape:export-ydpi="75" />
+      <circle
+         style="opacity:1;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         id="circle4743"
+         cx="-272.28305"
+         cy="126.91473"
+         r="2.2841296"
+         inkscape:export-filename="C:\Users\Lena\Documents\GameProjects\UnityProjekte\GGJ2022\Duelity\Duelity_UnityProject\Assets\Sprites\revolver-magazine.png"
+         inkscape:export-xdpi="75"
+         inkscape:export-ydpi="75" />
+    </g>
+  </g>
+</svg>
