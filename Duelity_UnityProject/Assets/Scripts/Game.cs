@@ -1,7 +1,7 @@
 using Duelity.Utility;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 using System;
 using System.Diagnostics;
@@ -21,8 +21,14 @@ namespace Duelity
 
         [SerializeField] Player _rightPlayer;
 
-        [SerializeField] Image _fadeOutImage;
+        [SerializeField] SpriteRenderer _fadeOutSpriteRenderer;
 
+        [SerializeField] TextMeshPro _titleText;
+        [SerializeField] TextMeshPro _anyKeyPromptText;
+
+
+        Color FadeOutColor => Color.black;
+        Color FadeInColor => new Color(0f, 0f, 0f, 0f);
 
         Coroutine _crossFadeCoroutine;
 
@@ -52,16 +58,18 @@ namespace Duelity
 
         IEnumerator Start()
         {
+            _anyKeyPromptText.enabled = false;
             Settings.TitleScreenMusic.Play(target: this);
             Time.timeScale = 1f;
-            _fadeOutImage.color = Color.black;
-            _fadeOutImage.CrossFadeAlpha(0f, Settings.FadeInDuration, true);
+            FadeIn(Settings.FadeInDuration);
             yield return new WaitForSecondsRealtime(Settings.FadeInDuration);
 
-            // TODO: Show any key prompt
+            _anyKeyPromptText.enabled = true;
 
             yield return new WaitUntil(() => Input.anyKeyDown);//|| Application.isEditor
-                                                               // TODO: Hide any key prompt and maybe other stuff from title scene
+
+            _titleText.enabled = false;
+            _anyKeyPromptText.enabled = false;
 
             float musicFadeDuration = 1.5f;
             Settings.AmbienceMusic.Play(this, 0f, 1f);
@@ -74,7 +82,7 @@ namespace Duelity
             yield return new WaitForSecondsRealtime(duelTriggerTime);
 
             Events.DuelStarted.RaiseEvent(Events.NoArgs);
-         //   Time.timeScale = 0.1f;
+            //   Time.timeScale = 0.1f;
 
             // TODO: Play more/other sounds/music here?
 
@@ -148,8 +156,21 @@ namespace Duelity
             }
         }
 
+        void FadeIn(float duration, Action callback = null)
+        {
+            _fadeOutSpriteRenderer.color = Color.black;
+            Fade(FadeOutColor, FadeInColor, duration, Settings.FadeInCurve, callback);
+        }
 
-        void CrossFade(float alpha, float duration, Action callback = null)
+        void FadeOut(float duration, Action callback = null)
+        {
+            var color = Color.black;
+            color.a = 0f;
+            _fadeOutSpriteRenderer.color = color;
+            Fade(FadeInColor, FadeOutColor, duration, Settings.FadeOutCurve, callback);
+        }
+
+        void Fade(Color startingColor, Color targetColor, float duration, AnimationCurve curve = null, Action callback = null)
         {
             if (_crossFadeCoroutine != null)
             {
@@ -157,20 +178,37 @@ namespace Duelity
                 _crossFadeCoroutine = null;
             }
 
-            _crossFadeCoroutine = StartCoroutine(CrossFadeRoutine());
-            IEnumerator CrossFadeRoutine()
+            _crossFadeCoroutine
+                = StartCoroutine(ColorLerpRoutine(startingColor, targetColor, duration, (color) => _fadeOutSpriteRenderer.color = color, curve, callback));
+        }
+
+        IEnumerator ColorLerpRoutine(Color startingColor,
+            Color targetColor,
+            float duration,
+            Action<Color> callback,
+            AnimationCurve curve,
+            Action doneCallback = null)
+        {
+            duration = Math.Max(Mathf.Epsilon, duration);
+            float elapsedTime = 0f;
+            while (elapsedTime < duration)
             {
-                _fadeOutImage.CrossFadeAlpha(alpha, duration, true);
-                yield return new WaitForSecondsRealtime(duration);
-                callback?.Invoke();
+                elapsedTime += Time.unscaledDeltaTime;
+                float progress = elapsedTime / duration;
+                float t = curve?.Evaluate(progress) ?? progress;
+                Color color = Color.Lerp(startingColor, targetColor, t);
+                callback.Invoke(color);
+                yield return null;
             }
+
+            doneCallback?.Invoke();
         }
 
         public void Reload()
         {
             Settings.TitleScreenMusic.Fade(this, 0f, Settings.FadeOutDuration, true);
             Settings.AmbienceMusic.Fade(this, 0f, Settings.FadeOutDuration, true);
-            CrossFade(1, Settings.FadeOutDuration, () => SceneManager.LoadScene("Main"));
+            FadeOut(Settings.FadeOutDuration, () => SceneManager.LoadScene("Main"));
         }
 
         [Conditional(Log.EDITOR_DEFINE)]

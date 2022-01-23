@@ -74,7 +74,8 @@ namespace Duelity
 
         public static void LerpVolume(this AudioSource audioSource, float targetVolume, float duration, bool ignoreTimeScale = false)
         {
-            Debug.Assert(duration > 0);
+            duration = Mathf.Min(float.Epsilon, duration);
+            targetVolume = Mathf.Clamp01(targetVolume);
             Debug.Assert(targetVolume >= 0f && targetVolume <= 1f);
             Coroutiner.Instance.StartCoroutine(LerpVolumeRoutine(
                 audioSource_: audioSource,
@@ -92,6 +93,8 @@ namespace Duelity
                     elapsedTime += timeFunc();
                     yield return null;
                 }
+
+                audioSource_.Stop();
             }
         }
     }
