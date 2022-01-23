@@ -116,30 +116,10 @@ namespace Duelity
             {
                 Events.SecretEndingTriggered.RaiseEvent(Events.NoArgs);
                 _anyEndingWasTriggered = true;
+                _leftPlayerDuelMiniGameDisplay.PlayExitAnimation();
+                _rightPlayerDuelMiniGameDisplay.PlayExitAnimation();
                 _endingCoroutine = StartCoroutine(SecretEndingRoutine());
-                IEnumerator SecretEndingRoutine()
-                {
-                    _leftPlayerDuelMiniGameDisplay.PlayExitAnimation();
-                    _rightPlayerDuelMiniGameDisplay.PlayExitAnimation();
 
-                    Player firstToStandDown = UnityEngine.Random.value >= .5f ? _leftPlayer : _rightPlayer;
-                    Player secondToStandDown = firstToStandDown == _leftPlayer ? _rightPlayer : _leftPlayer;
-                    firstToStandDown.StandDown();
-                    yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(0.33f, 1f));
-                    secondToStandDown.StandDown();
-
-                    yield return new WaitForSecondsRealtime(1f);
-
-                    Player firstToWalkaway = UnityEngine.Random.value >= .5f ? _leftPlayer : _rightPlayer;
-                    Player secondToWalkaway = firstToWalkaway == _leftPlayer ? _rightPlayer : _leftPlayer;
-
-                    firstToWalkaway.WalkAway();
-                    yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(0.33f, 1f));
-                    secondToWalkaway.WalkAway();
-
-                    yield return new WaitForSecondsRealtime(3.5f);
-                    FadeInText(_titleText, 2f, null);
-                }
             }
         }
 
@@ -154,7 +134,6 @@ namespace Duelity
             DebugStuff();
         }
 
-
         void OnPlayerFailedReload(Player playerWhoFailed)
         {
             Debug.Assert(_endingCoroutine == null);
@@ -162,17 +141,45 @@ namespace Duelity
             IEnumerator PlayerFailedEndingRoutine()
             {
                 _anyEndingWasTriggered = true;
+                playerWhoFailed.Fumble();
                 yield return new WaitForSecondsRealtime(1f);
                 _leftPlayerDuelMiniGameDisplay.PlayExitAnimation();
                 _rightPlayerDuelMiniGameDisplay.PlayExitAnimation();
-                // TODO: implement this ending
 
-                yield return new WaitForSecondsRealtime(3.5f);
-                FadeInText(_titleText, 2f, null);
-                yield return new WaitForSecondsRealtime(2f);
+                Player winningPlayer = playerWhoFailed == _leftPlayer ? _rightPlayer : _leftPlayer;
+                bool winningPlayerShot = false;
+                bool mercy = false;
+                float mercyTimer = 0f;
+                while (!winningPlayerShot && !mercy)
+                {
+                    winningPlayerShot = Input.GetKeyDown(winningPlayer.ActionKey);
+                    mercyTimer += Time.unscaledDeltaTime;
+                    mercy = mercyTimer >= 7f;
+                    yield return null;
+                }
 
-                yield return new WaitUntil(() => Input.anyKeyDown);
-                Reload();
+                if (winningPlayerShot)
+                {
+                    winningPlayer.Shoot();
+                    yield return null;
+                    playerWhoFailed.Die();
+
+                    yield return new WaitForSecondsRealtime(2f);
+
+                    winningPlayer.WalkAway();
+
+                    yield return new WaitForSecondsRealtime(3.5f);
+                    FadeInText(_titleText, 2f, null);
+                    yield return new WaitForSecondsRealtime(2f);
+
+                    yield return new WaitUntil(() => Input.anyKeyDown);
+                    Reload();
+                }
+                // mercy
+                else
+                {
+                    StartCoroutine(SecretEndingRoutine());
+                }
             }
         }
 
@@ -302,6 +309,27 @@ namespace Duelity
             FadeOut(Settings.FadeOutDuration, () => SceneManager.LoadScene("Main"));
         }
 
+        IEnumerator SecretEndingRoutine()
+        {
+            Player firstToStandDown = UnityEngine.Random.value >= .5f ? _leftPlayer : _rightPlayer;
+            Player secondToStandDown = firstToStandDown == _leftPlayer ? _rightPlayer : _leftPlayer;
+            firstToStandDown.StandDown();
+            yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(0.33f, 1f));
+            secondToStandDown.StandDown();
+
+            yield return new WaitForSecondsRealtime(1f);
+
+            Player firstToWalkaway = UnityEngine.Random.value >= .5f ? _leftPlayer : _rightPlayer;
+            Player secondToWalkaway = firstToWalkaway == _leftPlayer ? _rightPlayer : _leftPlayer;
+
+            firstToWalkaway.WalkAway();
+            yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(0.33f, 1f));
+            secondToWalkaway.WalkAway();
+
+            yield return new WaitForSecondsRealtime(3.5f);
+            FadeInText(_titleText, 2f, null);
+        }
+
         [Conditional(Log.EDITOR_DEFINE)]
         [Conditional(Log.DEVBUILD_DEFINE)]
         void DebugStuff()
@@ -313,7 +341,7 @@ namespace Duelity
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                _cameraShaker.ShakeObject(Camera.main.transform,Settings.CameraShakeShot);
+                _cameraShaker.ShakeObject(Camera.main.transform, Settings.CameraShakeShot);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))

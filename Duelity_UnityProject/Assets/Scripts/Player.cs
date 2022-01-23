@@ -21,15 +21,15 @@ namespace Duelity
 
         DuelMiniGame _duelMiniGame;
 
-        KeyCode ActionKey => _playerType == PlayerType.LeftPlayer
-            ? Game.Settings.KeyCodeLeftPlayer
-            : Game.Settings.KeyCodeRightPlayer;
+        public KeyCode ActionKey => _playerType == PlayerType.LeftPlayer
+             ? Game.Settings.KeyCodeLeftPlayer
+             : Game.Settings.KeyCodeRightPlayer;
 
         static readonly int parameterIdState = Animator.StringToHash("State");
         static readonly int parameterIdStateOffset = Animator.StringToHash("IdleOffset");
 
         const int ANIM_IDLE = 0;
-        const int ANIM_DRAW_WEAPON = 1;
+        const int ANIM_FUMBLE = 1;
         const int ANIM_SHOOT = 2;
         const int ANIM_DIE = 3;
         const int ANIM_WALK = 4;
@@ -90,7 +90,6 @@ namespace Duelity
         {
             _duelMiniGame = new DuelMiniGame(Game.Settings.DuelMiniGameConfig);
             _duelMiniGameDisplay.AssignDuelMiniGame(_duelMiniGame);
-            _animator.SetInteger(parameterIdState, ANIM_DRAW_WEAPON);
         }
 
         void OnPlayerReloadedAll(Player player)
@@ -138,9 +137,14 @@ namespace Duelity
 
         }
 
+        public void Fumble()
+        {
+            _animator.SetInteger(parameterIdState, ANIM_FUMBLE);
+        }
+
         public void StandDown()
         {
-            _animator.SetInteger(parameterIdState, ANIM_PUT_WEAPON_AWAY);
+
         }
 
         public void WalkAway()
